@@ -1,0 +1,78 @@
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; }
+
+/*-------------------------header----------------------*/
+.header {
+  width: 100%;
+  height: .87rem;
+  background: #000; }
+
+.head {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  color: #D6E6E2; }
+  .head span {
+    margin: 0 .22rem;
+    font-size: .33rem; }
+  .head h1 {
+    -webkit-box-flex: 1;
+    margin-left: .1rem;
+    font-size: .35rem;
+    font-weight: 100; }
+
+/*-------------------------main----------------------*/
+.main {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  position: relative;
+  overflow: hidden; }
+  .main section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #eee; }
+
+.pic {
+  width: 100%;
+  height: 5rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  margin-top: 1.24rem;
+  margin-bottom: .63rem; }
+  .pic img {
+    width: 2.59rem;
+    height: 2.94rem; }
+  .pic span {
+    font-size: .35rem;
+    color: #333;
+    margin-top: .3rem; }
+  .pic em {
+    font-size: .24rem;
+    color: #919191;
+    margin-top: .2rem; }
+  .pic i {
+    color: #1EB228; }
+  .pic img, .pic span, .pic em {
+    display: block; }
+
+.ok {
+  padding: 0 1.05rem; }
+  .ok span {
+    width: 100%;
+    height: 1.25rem;
+    display: block;
+    font-size: .3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.25rem;
+    background: #1EB228; }
+
+/*# sourceMappingURL=cwts.css.map */

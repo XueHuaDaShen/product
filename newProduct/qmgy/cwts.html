@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta name="format-derection" content="telephone=no,email=no"/>
+	<link rel="stylesheet" href="css/cwts.css">
+	<link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<div class="head">
+				<span>&lt;我的</span>
+				<h1>错误提示</h1>
+				<span>· · ·</span>
+			</div>
+		</header>
+		<main class="main">
+			<section>
+				<div class="scroll">
+					<div class="pic">
+						<img src="img/cwts.png">
+						<span>未达到制定人数</span>
+						<em><i>5</i>S自动跳转</em>
+					</div>
+					<div class="ok"><span>立即跳转</span></div>
+				</div>
+			</section>
+		</main>
+	</div>
+</body>
+</html>
+<script src="js/iscroll5.js"></script>
+<script>
+var fSize=document.documentElement.clientWidth/7.5;
+document.documentElement.style.fontSize=fSize+"px";
+var scroll=new IScroll("section")
+</script>

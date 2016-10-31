@@ -1,0 +1,138 @@
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; }
+
+/*-------------------------header----------------------*/
+.header {
+  width: 100%;
+  height: .87rem;
+  background: #000; }
+
+.head {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  color: #D6E6E2; }
+  .head span {
+    margin: 0 .22rem;
+    font-size: .33rem; }
+  .head h1 {
+    -webkit-box-flex: 1;
+    margin-left: .1rem;
+    font-size: .35rem;
+    font-weight: 100; }
+
+/*-------------------------main----------------------*/
+.main {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  position: relative;
+  overflow: hidden; }
+  .main section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #eee; }
+
+.scroll {
+  width: 100%; }
+
+.scroll ul {
+  margin-bottom: .26rem; }
+
+ul {
+  width: 100%;
+  background: #fff; }
+  ul li {
+    border-bottom: 1px solid #ccc; }
+  ul li:last-child {
+    border: none; }
+
+li {
+  height: 1.24rem;
+  display: -webkit-box;
+  -webkit-box-align: center; }
+  li span {
+    margin-left: .6rem; }
+  li input {
+    display: block;
+    -webkit-box-flex: 1;
+    border: none; }
+  li input:focus::-webkit-input-placeholder {
+    color: #ccc; }
+  li i {
+    width: .33rem;
+    height: .32rem;
+    display: block;
+    margin-right: .38rem; }
+    li i img {
+      width: 100%;
+      height: 100%; }
+  li select {
+    background: #eee;
+    width: 1.23rem;
+    border: none;
+    height: .57rem; }
+  li em {
+    margin: 0 .34rem;
+    color: #000; }
+  li .date-em {
+    margin-left: .14rem;
+    margin-right: .34rem; }
+  li button {
+    width: 1.52rem;
+    height: .57rem;
+    background: #eee;
+    color: #999;
+    font-size: .3rem; }
+  li b {
+    width: 1.46rem;
+    height: .59rem;
+    background: #eee;
+    text-align: center;
+    line-height: .59rem;
+    display: block;
+    border-radius: 3px;
+    margin-right: .12rem;
+    font-weight: 100; }
+  li .on {
+    background: #1EB228;
+    color: #fff; }
+
+.i i {
+  width: .18rem; }
+
+.bor {
+  border: none; }
+
+.list {
+  height: auto;
+  padding: 0 .25rem;
+  padding-bottom: .3rem; }
+  .list textarea {
+    width: 100%;
+    display: block;
+    padding: .2rem .37rem;
+    height: 2.52rem;
+    background: #E6E6E6;
+    color: #949494;
+    border: none; }
+
+.ok {
+  padding: .43rem .25rem;
+  height: 5.1rem; }
+  .ok span {
+    width: 100%;
+    height: 1.25rem;
+    background: #1EB228;
+    display: block;
+    line-height: 1.25rem;
+    text-align: center;
+    color: #fff;
+    font-size: .35rem; }
+
+/*# sourceMappingURL=faactive.css.map */

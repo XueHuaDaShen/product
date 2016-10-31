@@ -1,0 +1,23 @@
+{
+  "name": "n-js",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "oclazyload": "^1.0.9"
+  }
+}

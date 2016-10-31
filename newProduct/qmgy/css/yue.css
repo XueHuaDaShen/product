@@ -1,0 +1,125 @@
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; }
+
+/*-------------------------header----------------------*/
+.header {
+  width: 100%;
+  height: .87rem;
+  background: #000; }
+
+.head {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  position: relative;
+  color: #D6E6E2; }
+  .head span {
+    position: absolute;
+    height: 100%;
+    font-size: .33rem;
+    line-height: .87rem;
+    top: 0; }
+  .head span:nth-of-type(1) {
+    left: .22rem; }
+  .head span:nth-of-type(2) {
+    right: .22rem; }
+  .head h1 {
+    width: 100%;
+    height: 100%;
+    line-height: .87rem;
+    text-align: center;
+    font-size: .35rem;
+    font-weight: 100; }
+
+/*-------------------------main----------------------*/
+.main {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  position: relative;
+  overflow: hidden; }
+  .main section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #EDEDED; }
+
+.scroll {
+  padding: 0 .24rem; }
+
+.box {
+  padding: .66rem .79rem;
+  height: 5.16rem;
+  background: #fff;
+  margin-top: .21rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; }
+  .box span {
+    display: block;
+    text-align: center;
+    margin-top: .27rem;
+    font-size: .35rem; }
+
+.pic {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  background: #1EB228;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center; }
+
+.big img {
+  width: 1.76rem;
+  height: 1.6rem; }
+
+.small img {
+  width: 1.62rem;
+  height: 2.08rem; }
+
+/*-------------------------footer----------------------*/
+.footer {
+  width: 100%;
+  height: 1.2rem;
+  background: #F6F6F6; }
+
+.nav {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box; }
+  .nav a {
+    -webkit-box-flex: 1;
+    display: block;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: center;
+    -webkit-box-pack: center; }
+  .nav img {
+    width: 100%;
+    height: 100%; }
+  .nav i {
+    display: block; }
+
+.yy {
+  width: .53rem;
+  height: .53rem; }
+
+.fw {
+  width: .44rem;
+  height: .43rem; }
+
+.hd {
+  width: .29rem;
+  height: .47rem; }
+
+.zx {
+  width: .47rem;
+  height: .47rem; }
+  .zx img {
+    height: .19rem; }
+
+/*# sourceMappingURL=yue.css.map */

@@ -1,0 +1,298 @@
+html,body,.container{
+	width:100%;
+	height:100%;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+}
+/*-------------------------header----------------------*/
+.header{
+	width:100%;
+	height:.87rem;
+	background:#000;
+}
+.head{
+	width:100%;
+	height:100%;
+	display:-webkit-box;
+	position:relative;
+	color:#D6E6E2;
+	span{
+		position:absolute;
+		height:100%;
+		font-size:.33rem;
+		line-height:.87rem;
+		top:0;
+	}
+	span:nth-of-type(1){
+		left:.22rem;
+	}
+	span:nth-of-type(2){
+		right:.22rem;
+	}
+	h1{
+		width:100%;
+		height:100%;
+		line-height:.87rem;
+		text-align:center;
+		font-size:.35rem;
+		font-weight:100;
+	}
+}
+/*-------------------------main----------------------*/
+.main{
+	width:100%;
+	height:100%;
+	-webkit-box-flex:1;
+	position:relative;
+	overflow:hidden;
+	section{
+		width:100%;
+		height:100%;
+		position:absolute;
+		background:#EEEEEE;
+	}
+}
+.tit{
+	width:100%;
+	height:1.25rem;
+	background:#1EB228;
+	display:-webkit-box;
+	-webkit-box-align:center;
+	span{
+		width:.86rem;
+		height:.86rem;
+		display:block;
+		border-radius:50%;
+		display:-webkit-box;
+		-webkit-box-align:center;
+		-webkit-box-pack:center;
+		margin:0 .38rem;
+		color:#fff;
+		fotn-size:.3rem;
+		img{
+			width:.59rem;
+			height:.55rem;
+		}
+	}
+	h1{
+		font-weight:100;
+		-webkit-box-flex:1;
+		color:#fff;
+		fotn-size:.35rem;
+	}
+}
+.info{
+	padding:.25rem;
+	background:#fff;
+	margin-bottom:.19rem;
+	p{
+		padding:.22rem;
+		border-radius:5px;
+		background:#eee;
+		font-size:.24rem;
+		color:#939393;
+		line-height:.46rem;
+	}
+}
+.tag{
+	width:100%;
+	height:.47rem;
+	margin-bottom:.18rem;
+	display:-webkit-box;
+	span{
+		width:.08rem;
+		height:.47rem;
+		display:block;
+		margin-right:.18rem;
+	}
+	img{
+		width:100%;
+		height:100%;
+	}
+}
+.lxr{
+	width:100%;
+	li{
+		width:100%;
+		height:.89rem;
+		border-bottom:1px solid #E6E6E6;
+		background:#fff;
+		display:-webkit-box;
+		-webkit-box-align:center;
+		position:relative;
+	}
+	i{
+		width:.08rem;
+		height:.47rem;
+		display:block;
+		position:absolute;
+		left:.25rem;
+		top:50%;
+		margin-top:-.21rem;
+	}
+	img{
+		width:100%;
+		height:100%;
+	}
+	span{
+		margin-left:.49rem;
+		margin-right:.16rem;
+		font-size:.3rem;
+	}
+	em{
+		color:#333;
+		font-size:.3rem;
+	}
+}
+.ok{
+	padding:.4rem 0;
+	span{
+		width:100%;
+		height:1.05rem;
+		background:#1EB228;
+		display:block;
+		line-height:1.05rem;
+		text-align:center;
+		font-size:.35rem;
+		color:#fff;
+	}
+}
+.cyry,.pj{
+	width:100%;
+	background:#fff;
+	margin-bottom:.21rem;
+	.fir{
+		width:100%;
+		height:.88rem;
+		border-bottom:1px solid #E6E6E6;
+		display:-webkit-box;
+		-webkit-box-align:center;
+		span{
+			width:.08rem;
+			height:.47rem;
+			display:block;
+			margin:0 .21rem;
+		}
+		em{
+			color:#333;
+			font-size:.3rem;
+		}
+	}
+}
+.t{
+	width:100%;
+	height:1.24rem;
+	border-bottom:1px solid #E6E6E6;
+	border-top:1px solid #E6E6E6;
+	display:-webkit-box;
+	-webkit-box-align:center;
+	padding-left:.51rem;
+	padding-right:.46rem;
+	i{
+		display:block;
+		width:.82rem;
+		height:.82rem;
+		background:#7D7C7C;
+		border-radius:50%;
+		overflow:hidden;
+		margin-right:.27rem;
+	}
+	span{
+		display:block;
+		-webkit-box-flex:1;
+	}
+	em{
+		width:1.57rem;
+		height:.57rem;
+		display:block;
+		line-height:.57rem;
+		text-align:center;
+		color:#fff;
+		margin-left:.12rem;
+		border-radius:3px;
+		font-size:.28rem;
+	}
+	.green{
+		background:#1EB228;
+	}
+	.yellow{
+		background:#F4D24B;
+	}
+	.ma{
+		width:1.99rem;
+		display:none;
+	}
+}
+.box .y .ma{
+	display:block;
+}
+.box .y .ju{
+	display:none;
+}
+.b{
+	padding:0 .25rem;
+	background:#fff;
+	display:none;
+	ul{
+		width:100%;
+		background:#eee;
+	}
+	li{
+		width:100%;
+		height:.9rem;
+		display:-webkit-box;
+		-webkit-box-align:center;
+		color:#919191;
+	}
+	span{
+		margin-left:.35rem;
+		font-size:.28rem;
+	}
+	em{
+		color:#919191;
+		font-size:.28rem;
+
+	}
+}
+.pj-info{
+	padding:0 .5rem;
+	height:1.63rem;
+	border-bottom:1px solid #e6e6e6;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	div{
+		display:-webkit-box;
+		-webkit-box-align:center;
+		height:.75rem;
+	}
+	span{
+		margin-right:.36rem;
+		color:#919191;
+		display:block;
+		font-size:.24rem;
+	}
+	em{
+		display:block;
+		-webkit-box-flex:1;
+		color:#919191;
+		margin:0;
+		font-size:.24rem;
+	}
+	i{
+		width:.34rem;
+		height:.31rem;
+		display:block;
+		margin-left:.15rem;
+		background:url("../img/start.png") no-repeat;
+		background-size:cover;
+	}
+	.on{
+		background:url("../img/start-on.png") no-repeat;
+		background-size:cover;
+	}
+	p{
+		line-height:.35rem;
+		font-size:.24rem;
+		color:#333;
+	}
+}

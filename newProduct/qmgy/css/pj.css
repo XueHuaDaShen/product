@@ -1,0 +1,107 @@
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; }
+
+/*-------------------------header----------------------*/
+.header {
+  width: 100%;
+  height: .87rem;
+  background: #000; }
+
+.head {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  position: relative;
+  color: #D6E6E2; }
+  .head span {
+    position: absolute;
+    height: 100%;
+    font-size: .33rem;
+    line-height: .87rem;
+    top: 0; }
+  .head span:nth-of-type(1) {
+    left: .22rem; }
+  .head span:nth-of-type(2) {
+    right: .22rem; }
+  .head h1 {
+    width: 100%;
+    height: 100%;
+    line-height: .87rem;
+    text-align: center;
+    font-size: .35rem;
+    font-weight: 100; }
+
+/*-------------------------main----------------------*/
+.main {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  position: relative;
+  overflow: hidden; }
+  .main section {
+    width: 100%;
+    height: 100%;
+    position: absolute; }
+
+.fw-time {
+  padding: .24rem; }
+  .fw-time p:nth-of-type(2) {
+    color: #919191; }
+  .fw-time p {
+    height: .54rem;
+    line-height: .54rem;
+    font-size: .3rem;
+    margin-left: .25rem; }
+  .fw-time span {
+    margin-right: .54rem; }
+
+.tag {
+  height: .19rem;
+  width: 100%;
+  background: #eee; }
+
+.pf {
+  padding: 0 .24rem;
+  height: 1.25rem;
+  display: -webkit-box;
+  -webkit-box-align: center; }
+  .pf span {
+    margin-left: .3rem;
+    margin-right: 1.1rem; }
+  .pf i {
+    width: .55rem;
+    height: .52rem;
+    display: block;
+    background: url("../img/start.png") no-repeat;
+    background-size: cover;
+    margin-right: .28rem; }
+  .pf .on {
+    background: url("../img/start-on.png") no-repeat;
+    background-size: cover; }
+
+.area {
+  padding: 0 .24rem; }
+  .area p {
+    width: 100%;
+    height: 2.44rem;
+    background: #eee;
+    padding: .26rem .29rem;
+    color: #919191; }
+
+.ok {
+  padding: 0 .24rem;
+  margin-top: .4rem; }
+  .ok span {
+    width: 100%;
+    height: 1.25rem;
+    background: #1EB228;
+    display: block;
+    line-height: 1.25rem;
+    text-align: center;
+    font-size: .3rem;
+    color: #fff; }
+
+/*# sourceMappingURL=pj.css.map */
