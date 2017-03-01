@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"><!--解决资源跨域的策略-->
+    <title>编辑作业</title>
+    <link rel="stylesheet" href="../css/upload_Work.css">
+    <script>window.PointerEvent = undefined</script><!--iscroll卡的现象-->
+</head>
+<body>
+<div class="edit">
+    <div class="edit_top">
+        <h2>#饼干小人过新年# <span>></span></h2>
+        <textarea name="textarea" id="text" cols="" rows="" placeholder="输入作品描述"></textarea>
+        <div class="upload_img">
+            <div>
+                <ul class="up_uls"></ul>
+            </div>
+            <div class="upload_file">
+                <label for="files"><span class="add">+</span></label>
+                <input type="file" id="files" class="inputs">   
+            </div>
+        </div>
+    </div>
+ 
+    <div class="publish">
+        <button class="pub_btn">发布作品</button>
+    </div>
+    <div class="mask">
+        <div class="dialog">
+            <div class="dia_top">
+                <h3>作品已提交啦～</h3>
+                <p>亲,你的作品已提交,微信登录艺休哥APP可查看老师点评及更多精彩课程</p>
+            </div>
+            <div class="dia_ul">
+                <ul>
+                    <li>现在去看看</li>
+                    <li>不用了</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/jquery.js"></script>
+<script src="../js/upload.js"></script>
+<script src="../js/common.js"></script>
+<script>
+ 
+
+    document.documentElement.style.fontSize=document.documentElement.clientWidth/6.92+"px";
+	
+	var userId =localStorage.getItem("userId");
+	var _work_title =localStorage.getItem("_work_title");
+	var _work_id =localStorage.getItem("_work_id");
+	
+	if(null==userId || null==_work_id ){
+		//alert("去登录");
+		location.href="weixin_Work.html"; 
+	}
+	
+	//图片暂存管理
+    var upload_images=[];
+	function append_images(url){
+		upload_images.push(url)
+ 		localStorage.setItem("upload_images", upload_images);
+	}
+	function append_images_clear(url){
+ 		localStorage.setItem("upload_images", []);
+	}
+	append_images_clear();
+	
+   /* var obj=window.localStorage.obj;
+    var objs=JSON.parse(obj);
+    var title=objs.title;//名字
+    var id=objs.id;//id
+    $(".edit_top h2").html(title+"<span>></span>");*/
+    $(".edit_top h2").on("click","span",function(){
+       $(this).addClass("edit_sp");
+    });
+
+ 
+
+    $(".pub_btn").on("click",function(){
+	
+        $(this).css({"outline":"none"});
+		
+        var text=$("#text").val(); 
+		if(text==""){
+			alert("描述必填");
+			return;
+		}
+		
+		if(null==upload_images || upload_images.length==0){
+			alert("图片必传");
+			return; 
+		}
+		do_submit_post();
+		
+    }); 
+	function do_submit_post(){
+		var obj={};
+		obj.text=$("#text").val();
+		obj.images=upload_images;
+		var data = new FormData();
+		data.append('questionsComment.content', JSON.stringify(obj));
+		data.append('questionsComment.questionId', _work_id);
+		data.append('userId', userId);
+		
+		$.ajax({
+            url: BaseUrl+"/api/workpost/add.do",
+            type:'POST',
+            data:data,
+            cache: false,
+            contentType: false,    //不可缺
+            processData: false,    //不可缺
+            success:function(data){
+                console.log(data) 
+				var data =JSON.parse(data); 
+				if(data.success!=true){
+					alert("发布失败");
+				}else{
+					location.href="Works_details.html"; 
+				}
+				
+            }
+       });
+	
+	} 
+    function on_upload_success(){
+        $(".mask").show();
+        $(".dia_top").addClass("hover");
+        $(".dialog ul li").on("click",function(){//弹出框选择后跳转页面
+            $(".dia_top").removeClass("hover");
+            $(this).addClass("hover").siblings().removeClass();
+        });
+    }
+	
+	$("#files").change(function(){
+        if($("#files").val() != ''){
+			//alert("可以上传了");
+			do_upload_one();
+		}
+    });
+	
+    function do_upload_one() {
+	
+	  	var data = new FormData();
+		
+		$.each($('#files')[0].files, function(i, file) {
+            data.append('uploadfile', file);
+			data.append('param',"wework");
+			data.append('fileType',"jpg,gif,png,jpeg");
+        });
+		
+	     $.ajax({
+            url: BaseUrl+"/image/gok4",
+            type:'POST',
+            data:data,
+            cache: false,
+            contentType: false,    //不可缺
+            processData: false,    //不可缺
+            success:function(data){
+                console.log(data) 
+				try{
+					var data =JSON.parse(data); 
+					if(data.error!=0){
+						alert("上传失败,请请重试");
+					}else{
+						append_images(data.url);
+					}
+				}catch(e){
+					alert("上传失败");
+				}
+				
+            }
+        });
+		 
+    }
+
+
+</script>

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"><!--解决资源跨域的策略-->
+    <title>作品详情</title>
+    <link rel="stylesheet" href="../css/Works%20details.css">
+    <script>window.PointerEvent = undefined</script><!--iscroll卡的现象-->
+</head>
+<body>
+<div class="fixed"><a href="javascript:goDownload()">下载艺休哥,免费领取课程,更多精彩</a></div>
+    <div class="details wrapper" id="details">
+        <div>
+            <div class="de_section" id="de_section">
+            <div class="author">
+                <!-- <div class="head_portrait">
+                     <img src="../img/1.jpg" alt="">
+                 </div>
+              !--<h3>作者名字 <span>(头衔)</span><em>08:30</em></h3>
+                 <div class="teacher">
+                     <h4>饼干小人贺新年</h4>
+                     <div class="up_img">
+                         <ul>
+                             <li><img src="../img/2.jpg" alt=""></li>
+                             <li><img src="../img/2.jpg" alt=""></li>
+                             <li><img src="../img/2.jpg" alt=""></li>
+                         </ul>
+                     </div>
+                     <div class="info">
+                         <span>浏览<i>12</i>次</span>
+                         <span><i>24</i><img src="../img/3.jpg" alt=""></span>
+                     </div>
+                 </div>-->
+            </div>
+            <h2>最新作品<em class="Count">6</em></h2>
+            <div class="student">
+               <!--
+               <div class="sty_box">
+               <div class="stu_portrait">
+                    <img src="../img/1.jpg" alt="">
+                </div>
+                <h3>作者名字<em>08:30</em></h3>
+                <div class="stu_title">
+                    <h4>饼干小人贺新年</h4>
+                    <div class="up_img" id="up_img">
+                        <ul>
+                            <li><img src="../img/2.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="stu_info">
+                    <ul>
+                        <li class="list1"><a href="javascript:;"><img src="../img/f2.png" alt=""><span>3</span></a></li>
+                        <li class="list2"><a href="javascript:;"><img src="../img/p2.png" alt=""><span>4</span></a></li>
+                        <li class="list3"><a href="javascript:;"><img src="../img/z2.png" alt=""><span>5</span></a></li>
+                    </ul>
+                </div>
+                </div>-->
+            </div>
+                <div class="big">
+                        <img src="" alt="" class="bigimg">
+                </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../js/jquery.js"></script>
+<script src="../js/iscroll5.js"></script>
+<script src="../js/refresh.js"></script>
+<script src="../js/pullUp.js"></script>
+<script src="../js/common.js"></script>
+<script>
+
+	//检查参数
+	var _work_title =localStorage.getItem("_work_title");
+	var _work_id =localStorage.getItem("_work_id"); 
+	  
+	if(null==_work_id){
+	    alert("此作业不存在,ID错误")
+		location.href="weixin_Work.html"; 
+	}
+	
+
+    document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+"px";
+   var details=new IScroll("#details",{
+       preventDefault:true,
+       click:true
+
+   });
+    //获取首页的值
+    var obj=window.localStorage.obj;
+    var objs=JSON.parse(obj);
+    var title=objs.title;//名字
+    var id=objs.id;//id
+    var currentpage = 1;//当前页
+	 
+	//var s =getSmallImageUrl('http://192.168.1.15:9090/images/upload/wework/20170301/1488298356417.jpeg');
+ 	//alert(s)
+	
+
+	//设置BASE_URL
+ 
+
+    $.get("/images/work_list.json",function(data){
+        var author_info=data.questionsList;
+        //console.log(author_info);
+        var details_str="";
+        for(var m=0;m<author_info.length;m++){
+            var str_imgs="";
+            for(var n=0;n<author_info[m].images.length;n++){
+                //console.log(typeof(author_info[m].images[n]));//string
+                var string=author_info[m].images[n];//压缩前的地址 
+                var newStr=getSmallImageUrl(string);
+				 
+                str_imgs+='<li><img src="'+BaseUrl+newStr+'" alt=""></li>'
+            }
+            details_str+='<div class="head_portrait">'
+             +'<img src="'+BaseUrl+author_info[m].picImg+'" alt="">'
+             +'</div>'
+             +'<h3>'+author_info[m].showName+'<span>(头衔)</span><em>'+author_info[m].modelTime+'</em></h3>'
+             +' <div class="teacher">'
+             +' <h4>'+_work_title+'</h4>'
+             +' <div class="up_img">'
+             +'<ul>'
+             +str_imgs
+             +'</ul>'
+             +'</div>'
+             +'<div class="info">'
+             +'<span>浏览<i>'+author_info[m].browseCount+'</i>次</span>'
+             +'<span><i>'+author_info[m].replyCount+'</i><img src="../img/3.jpg" alt=""></span>'
+             +'</div>'
+             +'</div>'
+        }
+        $(".author").append(details_str);
+        details.refresh();
+
+    });
+    //最新作品
+    var xq_URL=BaseUrl+"/api/workpost/list.do?page.currentPage="+currentpage+"&questionsComment.questionId="+_work_id;
+   // alert(xq_URL);
+    $.get(xq_URL,function(getdata){
+        var getdata=JSON.parse(getdata).workposts;
+        var imgstr_temp='<li><img src="'+BaseUrl+'{img}" alt=""/></li>';
+       //console.log(getdata);
+        var getstr="";
+        for(var l=0;l<getdata.length;l++){
+            var content=JSON.parse(getdata[l].content);
+            var imgstr="";
+            var imgs_str="";
+            for(var k=0;k<content.images.length;k++){
+                var string=content.images[k];//压缩前的地址 
+                var newStr=getSmallImageUrl(string);//压缩后的地址
+                imgstr+=imgstr_temp.replace("{img}",newStr);
+                imgs_str=string;
+            }
+                getstr +=' <div class="stu_box">'
+                        +' <div class="stu_portrait">'
+                        + '<img src="../img/1.jpg" alt="">'
+                        + '</div>'
+                        + '<h3>' + getdata[l].showName + '<em>' + getdata[l].modelTime + '</em></h3>'
+                        + '<div class="stu_title">'
+                        + '<h4>' + content.text + '</h4>'
+                        + '<div class="up_img" id="up_img">'
+                        + '<ul>'
+                        + imgstr
+                        + '</ul>'
+                        + '</div>'
+                        + '</div>'
+                        + '<div class="stu_info">'
+                        + '<ul>'
+                        + '<li class="list1"><a href="javascript:;"><img src="../img/f2.png" alt=""><span>' + getdata[l].questionsStatus + '</span></a></li>'
+                        + '<li class="list2"><a href="javascript:;"><img src="../img/p2.png" alt=""><span>' + getdata[l].replyCount + '</span></a></li>'
+                        + '<li class="list3"><a href="javascript:;"><img src="../img/z2.png" alt=""><span>' + getdata[l].praiseCount + '</span></a></li>'
+                        + '</ul>'
+                        + '</div>'
+                        + '</div>';
+
+
+        }
+
+        $(".student").append(getstr);
+        details.refresh();
+        //按钮点击事件
+        function link(){
+            $(".stu_info li").hover(function(){//评论点赞区域
+                $(this).css({
+                    "background":"#FF5253"
+                });
+                $(this).find("a span").css({"color":"#fff"});
+            },function(){
+                $(this).css({
+                    "background":"#fff"
+                });
+                $(this).find("a span").css({"color":"#929292"});
+            });
+            $(".list1").hover(function(){
+                $(this).find("img").attr("src","../img/f1.png");
+            },function(){
+                $(this).find("img").attr("src","../img/f2.png");
+            });
+            $(".list2").hover(function(){
+                $(this).find("img").attr("src","../img/p1.png");
+            },function(){
+                $(this).find("img").attr("src","../img/p2.png");
+            });
+            $(".list3").hover(function(){
+                $(this).find("img").attr("src","../img/z1.png");
+            },function(){
+                $(this).find("img").attr("src","../img/z2.png");
+            });
+        }
+        link();
+
+        $(".up_img ul").on("click","li",function(){
+           var src=$(this).find("img").attr("src");
+            largeImageUrl(src)
+            var srcs=largeImageUrl(src);
+            $(".big").show();
+            $(".bigimg").attr("src",srcs);
+                var bigw = $(this).width;
+                var bigh = $(this).height;
+                if (bigw > bigh) {
+                    $(".bigimg").css({
+                        "width": "100%",
+                        "height": "auto"
+                    })
+                } else {
+                    $(".bigimg").css({
+                        "width": "auto",
+                        "height": "100%"
+                    })
+
+                }
+            $(".big").click(function(){
+                $(this).hide();
+            })
+        });
+        function largeImageUrl(src){
+            //url="http://a.app.qq.com/o/simple.jsp?pkgname=com.hsd.yixiuge.jpeg";
+            var src1=src.substr(src.lastIndexOf('.'));
+            var src2=src.substr(0,src.lastIndexOf('_small'));
+            var src3=src2+src1;
+            return src3;
+        }
+
+
+    })
+
+</script>
