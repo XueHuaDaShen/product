@@ -1,0 +1,276 @@
+html,body{
+	width:100%;
+	height:100%;
+}
+.container{
+	width:100%;
+	height:100%;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+}
+
+img{
+	width:100%;
+	height:100%;
+	display:block;
+}
+
+.header{
+	width:100%;
+	height:100%;
+	position: relative;
+}
+.change{
+	width:100%;
+	height:10%;
+	position: absolute;
+	left:0;
+	bottom:0 ;
+	display:-webkit-box;
+}
+.head1,.head2{
+	display: block;
+	-webkit-box-flex:1;
+}
+.head1{
+	margin-left:16px;
+	margin-right:4px;
+}
+.head2{
+	margin-right:16px;
+	margin-left:4px;
+}
+
+
+.main{
+	width:100%;
+	overflow: hidden;
+	background:url("../img/main_bj.jpg");
+}
+.cup{
+	position: relative;
+}
+.week{
+	padding-left: 7.6%;
+	padding-right: 4.5%;
+	width:100%;
+	position: absolute;
+	top:5%;
+	left:0;
+	height:10%;
+	display:none;
+}
+.week>div{
+	width:100%;
+	height:100%;
+	display:-webkit-box;
+	padding:1.6% 0;
+	background:url("../img/week.png") no-repeat left;
+	background-size:100% 100%;
+
+}
+.week>div>div{
+	-webkit-box-flex:1;
+	margin:0 1.7%;
+	position: relative;
+
+}
+.week>div>div .start{
+	position: absolute;
+	width:30%;
+	height:auto;
+	right:-17%;
+	top:-53%;
+}
+/*.first{
+	width:21.6%;
+	position: absolute;
+	left:39%;
+	top:18.4%;
+}*/
+.first1{
+	width:24.6%;
+	position: absolute;
+	left:36%;
+	top:22.7%;
+}
+.user{
+	width:100%;
+}
+.first1 .user img{
+	margin-top:0;
+	margin-left:0;
+}
+.first1 img{
+	margin-top:-40%;
+	margin-left:-3px;
+}
+.first2{
+	width:24.6%;
+	position: absolute;
+	left:37%;
+	top:16.4%;
+	overflow: hidden;
+}
+.user2{
+	width:100%;
+}
+.first2 .user2 img{
+	margin-top:0;
+	margin-left:0;
+}
+.first2 img{
+	margin-top:-48%;
+	margin-left:-2px;
+}
+
+
+.list{
+	position: relative;
+	z-index: 5;
+	width:100%;
+	overflow: hidden;
+}
+.list li{
+	width:100%;
+	height:83px;
+	position: relative;
+	overflow: hidden;
+	background:url("../img/info1.png") no-repeat left;
+	margin-bottom:6px;
+	background-size:cover;
+	display:-webkit-box;
+	-webkit-box-pack:justify;
+	-webkit-box-align:center;
+}
+.list li:last-child{
+	margin-bottom:0;
+}
+.list li:nth-child(odd){
+	background:url("../img/info1.png") no-repeat left;
+	background-size:cover;
+}
+.list li:nth-child(even){
+	background:url("../img/info2.png") no-repeat left;
+	background-size:cover;
+}
+
+
+
+.list3 li:nth-child(odd){
+	background-image:none;
+}
+.list3 li:nth-child(even){
+	background-image:none;
+}
+
+.anchor{
+	margin-left:11%;
+	position: relative;
+}
+.anchor em{
+	position: absolute;
+	left:3px;
+	bottom:0;
+	font-style: normal;
+	color:#fff;
+	font-size: 12px;
+}
+.union{
+	margin-right:15%;
+	font-size: 18px;
+}
+.anchor{
+	width:16.4%;
+	background: url("../img/cup1.jpg") no-repeat;
+	background-size: cover;
+}
+.an{
+	position: absolute;
+	z-index: 0;
+	left:0;
+	top:0;
+}
+
+.gold,.per{
+	margin-left:6.9%;
+	border-radius: 50%;
+	background: url("../img/cup1.jpg") no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.gold em,.per em{
+	position: absolute;
+	left:44%;
+	bottom:3px;
+	font-style: normal;
+	color:#fff;
+	font-size: 12px;
+}
+.yudan{
+	margin-right:9%;
+	font-size: 16px;
+	width:17%;
+	text-align: right;
+	overflow: hidden;
+}
+.loginname{
+	width:40%;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 20px;
+}
+/*.per_yudan{
+	margin-right:9%;
+	font-size: 16px;
+	width:17%;
+	text-align: right;
+	overflow: hidden;
+}
+.per_name{
+	width:40%;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 20px;
+}*/
+.gold,.per{
+	width:16.4%;
+}
+
+.follow{
+	width:10%;
+	height:100%;
+	right:0;
+	display:-webkit-box;
+	-webkit-box-align:center;
+	position: absolute;
+}
+.follow img{
+	width:100%;
+	height:auto;
+}
+
+
+.per_ranking{
+	width:100%;
+	min-height: 100%;
+	display:none;
+	position: absolute;
+	z-index: 999;
+	left:0;
+	top:0;
+	background:url("../img/union_bj.jpg");
+	background-size: cover;
+}
+.union_logo{
+	width:100%;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+}
+.union_name{
+	color:#fff;
+	text-align: center;
+	font-size: 30px;
+}
