@@ -39,16 +39,16 @@ img{
 	width:100%;
 	border-radius: 5px;
 	background:#000;
-	opacity:0.5;
+	opacity:0.7;
 	left:0;
 	top:0;
 }
-.union_top{
+.union_top, .anchor_top, .gold_top, .per_top{
 	width:100%;
 	display:-webkit-box;
 	-webkit-box-pack:center;
 }
-.union_top>div{
+.union_top>div, .anchor_top>div, .gold_top>div, .per_top>div{
 	width:28%;
 	height:28%;
 	margin-bottom:10%;
@@ -57,7 +57,7 @@ img{
 }
 .first{
 	margin-top:1%;
-	box-shadow: 0px 0px 50px #ca43af;
+	box-shadow: 0px 0px 30px #ca43af;
 }
 .first_img>span{
 	background: #ca43af;
@@ -67,7 +67,7 @@ img{
 .second{
 	margin-top:8%;
 	margin-right:5%;
-	box-shadow: 0px 0px 50px #7C36B2;
+	box-shadow: 0px 0px 30px #7C36B2;
 }
 .second_img>span{
 	background: #7C36B2;
@@ -77,14 +77,14 @@ img{
 .third{
 	margin-top:8%;
 	margin-left:5%;
-	box-shadow: 0px 0px 50px #434dca;
+	box-shadow: 0px 0px 30px #434dca;
 }
 .third_img>span{
 	background: #434dca;
 }
 
 
-.union_top>div>div>span{
+.union_top>div>div>span, .anchor_top>div>div>span, .gold_top>div>div>span, .per_top>div>div>span{
 	font-size:18px;
 	width:28%;
 	height:28%;
@@ -115,21 +115,23 @@ img{
 .name{
 	position: absolute;
 	width:100%;
+	white-space: nowrap;
+	overflow: hidden;
 	text-align:center;
 	margin-top:15%;
 	font-size: 20px;
 	color:#fff;
 }
 
-.union_ranking{
+.union_ranking, .anchor_ranking, .gold_ranking, .per_ranking{
 	width:100%;
 	margin-top:10%;
 	padding-bottom:10%;
 }
-.union_ranking li:first-child{
+.union_ranking li:first-child, .anchor_ranking li:first-child, .gold_ranking li:first-child, .per_ranking li:first-child{
 	margin-top: 0;
 }
-.union_ranking li{
+.union_ranking li, .anchor_ranking li, .gold_ranking li, .per_ranking li{
 	width:100%;
 	padding-left:5%;
 	margin-top: 7%;
@@ -144,10 +146,10 @@ li>div{
 }
 li>div>div>span{
 	font-size:14px;
-	width:28%;
-	height:28%;
+	width:40%;
+	height:40%;
 	position: absolute;
-	left:35%;
+	left:30%;
 	bottom:-10%;
 	border:2px solid #000;
 	border-radius: 50%;
@@ -166,7 +168,7 @@ li .second{
 li .third{
 	margin:0;
 }
-.union_name{
+.union_name, .anchor_name, .gold_name, .per_name{
 	width:40%;
 	position: relative;
 	margin-left: 8%;
@@ -179,6 +181,7 @@ li .third{
 }
 .yudan{
 	width:22%;
+	position: relative;
 	margin-right:3%;
 	font-size: 14px;
 	color:#ACABA7;
@@ -198,7 +201,7 @@ li .third{
 	margin-right:3%;
 }
 .yudan_rankinged{
-	box-shadow: 0px 0px 50px #ca43af;
+	box-shadow: 0px 0px 30px #ca43af;
 }
 .anchor .gift_ranking{
 	width:40.8%;
@@ -207,7 +210,7 @@ li .third{
 	overflow: hidden;
 }
 .gift_rankinged{
-	box-shadow: 0px 0px 50px #434dca;
+	box-shadow: 0px 0px 30px #434dca;
 }
 
 .section:nth-child(2){
@@ -236,18 +239,21 @@ li .third{
 	margin-right:.8%;
 }
 .round1ed{
-	box-shadow: 0px 0px 50px #434dca;
+	box-shadow: 0px 0px 30px #434dca;
+}
+.round2ed{
+	box-shadow: 0px 0px 30px #ca43af;
 }
 
 
 .red{
-	box-shadow: 0px 0px 50px #bc265e;
+	box-shadow: 0px 0px 30px #bc265e;
 }
 .blue{
-	box-shadow: 0px 0px 50px #4373ca;
+	box-shadow: 0px 0px 30px #4373ca;
 }
 .green{
-	box-shadow: 0px 0px 50px #43c2ca;
+	box-shadow: 0px 0px 30px #43c2ca;
 }
 
 
@@ -263,7 +269,7 @@ li .third{
 }
 
 
-.per_ranking{
+.union_per_ranking{
 	width:100%;
 	min-height: 100%;
 	display:none;
@@ -274,10 +280,10 @@ li .third{
 	background:url("../img/union_bj.jpg");
 	background-size: 100%;
 }
-.per_ranking .union_top{
+.union_per_ranking .per_top{
 	margin-top: 5%;
 }
-.per_ranking .union_top .first{
+.union_per_ranking .per_top .first{
 	margin:0;
 }
 .u_name{
