@@ -1,0 +1,269 @@
+html,body,.container{
+	width:100%;
+	height:100%;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+img{
+	width:100%;
+	height:100%;
+	display:block;
+}
+.main{
+	width:100%;
+	background:url("../img/bj.jpg");
+	background-size:100%;
+	z-index: -2;
+}
+.main .contai{
+	width:100%;
+	padding:0 8.5%;
+	position: relative;
+}
+.section{
+	width:100%;
+}
+.box{
+	width:100%;
+	padding:0 8.5%;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.bj_shadow{
+	width:100%;
+	border-radius: 5px;
+	background:#000;
+	opacity:0.5;
+	left:0;
+	top:0;
+	box-shadow: 0px 0px 30px #7C36B2;
+}
+.union_top, .anchor_top, .gold_top, .per_top{
+	width:100%;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+}
+.anchor_top>div{
+	margin-bottom:10%;
+	position: relative;
+	border-radius: 50%;
+}
+
+.anchor_top>.first{
+	width:40%;
+	height:40%;
+	margin-top: -20%;
+}
+.anchor_top>.first .name{
+	margin-top:-7%;
+}
+.anchor_top>.second{
+	width:25%;
+	height:25%;
+}
+.anchor_top>.third{
+	width:25%;
+	height:25%;
+}
+.anchor_top>.first .first_img{
+	padding:23%;
+}
+.anchor_top>.first .first_img>span{
+	width:20%;
+	height:20%;
+	bottom:15%;
+	left:41%;
+}
+.anchor_top>.second .second_img>span, .anchor_top>.third .third_img>span{
+	width:34%;
+	height:34%;
+}
+
+.first{
+	margin-top:1%;
+	box-shadow: 0px 0px 30px #ca43af;
+}
+.first_img>span{
+	background: #ca43af;
+}
+
+
+.second{
+	width:20%;
+	height:20%;
+	margin-top:-5%;
+	margin-right:2%;
+	box-shadow: 0px 0px 30px #7C36B2;
+}
+.second_img>span{
+	background: #7C36B2;
+}
+
+
+.third{
+	width:20%;
+	height:20%;
+	margin-top:-5%;
+	margin-left:2%;
+	box-shadow: 0px 0px 30px #434dca;
+}
+.third_img>span{
+	background: #434dca;
+}
+
+
+.union_top>div>div>span, .anchor_top>div>div>span, .gold_top>div>div>span, .per_top>div>div>span{
+	font-size:18px;
+	width:28%;
+	height:28%;
+	position: absolute;
+	left:34%;
+	bottom:-10%;
+	border:2px solid #000;
+	border-radius: 50%;
+	box-shadow: 0px 0px 1px #000;
+	color:#fff;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+}
+
+.first_img, .second_img, .third_img{
+	width:100%;
+	position: absolute;
+	padding:5%;
+	left:0;
+	top:0;
+}
+
+.first_img>img, .second_img>img, .third_img>img{
+	border-radius: 50%;
+}
+
+.name{
+	position: absolute;
+	width:100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align:center;
+	margin-top:15%;
+	font-size: 16px;
+	color:#fff;
+}
+
+.union_ranking, .anchor_ranking, .gold_ranking, .per_ranking{
+	width:100%;
+}
+.union_ranking li:first-child, .anchor_ranking li:first-child, .gold_ranking li:first-child, .per_ranking li:first-child{
+	margin-top: 0;
+}
+.union_ranking li, .anchor_ranking li, .gold_ranking li, .per_ranking li{
+	width:100%;
+	padding:0 2% 9%;
+	display:-webkit-box;
+	-webkit-box-align:center;
+}
+li div:first-child{
+	position: relative;
+	border-radius: 50%;
+}
+li>div>div>span{
+	font-size:14px;
+	width:40%;
+	height:40%;
+	position: absolute;
+	left:30%;
+	bottom:-10%;
+	border:2px solid #000;
+	border-radius: 50%;
+	box-shadow: 0px 0px 1px #000;
+	color:#fff;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+}
+li .name{
+	margin-top:8%;
+	font-size: 14px;
+}
+li .first{
+	margin:0;
+}
+li .second{
+	margin:0;
+}
+li .third{
+	margin:0;
+}
+li div{
+	color:#AEADB2;
+	font-size:12px;
+	width:20%;
+	text-align: center;
+	position: relative;
+}
+li .total{
+	color:#DBDBDD;
+}
+
+.anchor{
+	width:100%;
+	margin-top:-4%;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+}
+
+
+.red{
+	box-shadow: 0px 0px 30px #bc265e;
+}
+.blue{
+	box-shadow: 0px 0px 30px #4373ca;
+}
+.green{
+	box-shadow: 0px 0px 30px #43c2ca;
+}
+
+
+
+.foot{
+	z-index:-2;
+	position: relative;
+}
+
+
+.tag{
+	width:100%;
+	margin-top: 10%;
+	margin-bottom:2%;
+	padding:0 2%;
+	position: relative;
+	display:-webkit-box;
+	-webkit-box-align:center;
+}
+.tag p{
+	display:block;
+	width:20%;
+	text-align: center;
+	color:#BAB8BB;
+	font-size: 12px;
+}
+#name, #total{
+	color:#fff;
+}
+.download{
+	position: absolute;
+	width:100%;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	bottom:13.9%;
+}
+.download a{
+	display:block;
+	width:44%;
+	height:.5rem;
+}
