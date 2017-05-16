@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<img src="img/head.jpg">
+			<div class="week">
+				<div class="weeked"><img src="img/week1ed.png"></div>
+				<div><img src="img/week2.png"></div>
+				<div><img src="img/week3.png"></div>
+				<div><img src="img/week4.png"></div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="top">
+				<div>
+					<img src="">
+					<p class="name"></p>
+				</div>
+			</div>
+			<ul class="ranking">
+				<!-- <li>
+					<div class="video_img">
+						<img src="img/second.jpg">
+						<p class="name">VJ RANKING</p>
+					</div>
+					<div class="video_info">
+						<p>
+							<span>RANKING</span>
+							<i>:</i>
+							<em>1</em>
+						</p>
+						<p>
+							<span>VOTE</span>
+							<i>:</i>
+							<em>34562</em>
+						</p>
+						<p>
+							<span>SNAP BY</span>
+							<i>:</i>
+							<em>Supachai</em>
+						</p>
+					</div>
+					<div class="heart"><div class="hearted"></div></div>
+				</li> -->
+			</ul>
+		</main>
+		<footer class="foot">
+			<img src="img/foot.jpg" alt="">
+		</footer>
+	</div>
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+
+var weekTime = 1;
+var str = location.href.split("?")[1];
+var arr = str.split("&");
+var obj = {};
+for(var i in arr){
+	var key = arr[i].split("=")[0];
+	var value = arr[i].split("=")[1];
+	obj[key] = value;
+}
+// function follow(loginid) {
+//     //alert("follow");
+//     console.log(loginid)
+//     var query_data = {};
+//     query_data.loginid = loginid;
+//     if (window.webkit == null) {
+//         window.JSBridge.invoke('follow', JSON.stringify(query_data));
+//         window.JSBridge.invoke('user_profile', JSON.stringify(query_data));
+//     } else {
+//         window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'follow', JSON.stringify(query_data)]);
+//     }
+// }
+function record_live(stream_path, liveid, avatar, loginid) {
+    //alert("record_live");
+    var query_data = {};
+    query_data.loginid = loginid;
+    query_data.avatar = avatar;
+    query_data.liveid = liveid;
+    query_data.stream_path = stream_path;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('record_live', JSON.stringify(query_data));
+        //window.JSBridge.invoke('user_profile',JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'record_live', JSON.stringify(query_data)]);
+    }
+}
+$(".week>div").eq(0).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/05/07 23:59:59'))*1){
+		$(this).addClass("weeked").siblings().removeClass("weeked");
+		$(this).find("img").attr("src", "img/week1ed.png");
+		$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+		$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+		$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+		weekTime = 1;
+		getList();
+    }
+})
+$(".week>div").eq(1).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/05/14 23:59:59'))*1){
+		$(this).addClass("weeked").siblings().removeClass("weeked");
+		$(this).find("img").attr("src", "img/week2ed.png");
+		$(".week>div").eq(0).find("img").attr("src", "img/week1.png");
+		$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+		$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+		weekTime = 2;
+		getList();
+    }
+})
+$(".week>div").eq(2).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/05/21 23:59:59'))*1){
+		$(this).addClass("weeked").siblings().removeClass("weeked");
+		$(this).find("img").attr("src", "img/week3ed.png");
+		$(".week>div").eq(0).find("img").attr("src", "img/week1.png");
+		$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+		$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+		weekTime = 3;
+		getList();
+    }
+})
+$(".week>div").eq(3).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/05/28 23:59:59'))*1){
+		$(this).addClass("weeked").siblings().removeClass("weeked");
+		$(this).find("img").attr("src", "img/week4ed.png");
+		$(".week>div").eq(0).find("img").attr("src", "img/week1.png");
+		$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+		$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+		weekTime = 4;
+		getList();
+    }
+})
+$(document).on("click", ".video_img>img", function(){
+	var playurl = $(this).attr("data-playurl");
+	var _avatar = $(this).attr("src");
+	var _loginid = $(this).attr("data-loginid");
+	var _liveid = $(this).attr("data-liveid");
+	record_live(playurl, _liveid, _avatar, _loginid)
+})
+
+// $(document).on("click", ".hearted", function(event){
+// 	console.log(event.target)
+// 	// var loginid = $(this).attr("data-loginid");
+// 	// alert(loginid)
+// 	// vote(loginid)
+// })
+
+$(".top>div>img").on("click", function(){
+	var playurl = $(this).attr("data-playurl");
+	var _avatar = $(this).attr("src");
+	var _loginid = $(this).attr("data-loginid");
+	var _liveid = $(this).attr("data-liveid");
+	record_live(playurl, _liveid, _avatar, _loginid)
+})
+
+function li_style(){
+	$(".video_img").each(function(){
+		var w = $(this).width()
+		$(this).css({
+			"height": w+"px"
+		})
+		$(".video_info").css({
+			"height": w+"px"
+		})
+		$(".heart").css({
+			"height": w+"px"
+		})
+	})
+	$(".top>div").css("height", $(".top>div").width())
+	var heart_w = $(".heart").eq(0).width();
+	$(".heart").find("div").css("height", heart_w+"px");
+	$(".hearted").each(function(){
+		$(this).on("click", function(){
+			var loginid = $(this).attr("data-loginid");
+			vote(loginid)
+		})
+	})
+}
+
+
+function getList() {
+	var styleClass = '';
+	var newTime = new Date();
+	if( newTime*1 > (new Date('2017/05/01 23:59:59'))*1 && newTime*1 < (new Date('2017/05/15 00:00:00'))*1 ){
+		if( weekTime == 1){
+			styleClass = 'hearted';
+			getData(styleClass)
+		}
+	}else if( newTime*1 > (new Date('2017/05/14 23:59:59'))*1 && newTime*1 < (new Date('2017/05/22 00:00:00'))*1 ){
+		if( weekTime == 2){
+			styleClass = 'hearted';
+			getData(styleClass)
+		}else{
+			styleClass = '';
+			getData(styleClass)
+		}
+	}else if( newTime*1 > (new Date('2017/05/21 23:59:59'))*1 && newTime*1 < (new Date('2017/05/29 00:00:00'))*1 ){
+		if( weekTime == 3){
+			styleClass = 'hearted';
+			getData(styleClass)
+		}else{
+			styleClass = '';
+			getData(styleClass)
+		}
+	}else if( newTime*1 > (new Date('2017/05/28 23:59:59'))*1 ){
+		if( weekTime == 4){
+			styleClass = 'hearted';
+			getData(styleClass)
+		}else{
+			styleClass = '';
+			getData(styleClass)
+		}
+	}
+}
+getList()
+
+function getData(styleClass){
+	$.ajax({
+		url: 'https://dee.tutulive.tv:8446/api/v1/man/user/getlist?weak='+weekTime+'&flag=video',
+        method: 'get',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            //'token': token
+        },
+        success: function(data){
+        	var data = data.data;
+        	var str = '';
+        	var avatarurl = '';
+        	var firstavatar = '';
+        	if( data[0].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+        		firstavatar = '?imageView2/1/w/1000/h/1000';
+        	}else{
+        		firstavatar = '';
+        	}
+        	$(".top>div>img").attr({
+        		"src": data[0].avatar+firstavatar,
+        		"data-playurl": data[0].playback_url,
+        		"data-loginid": data[0].loginid,
+        		"data-liveid": data[0].liveid
+        	});
+        	$(".top>div>p").text(data[0].loginname);
+        	for(var i = 0; i < data.length; i++){
+        		if( data[i].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+        			avatarurl = '?imageView2/1/w/1000/h/1000';
+        		}else{
+        			avatarurl = '';
+        		}
+        		str += '<li><div class="video_img"><img src="'+data[i].avatar+avatarurl+'" data-playurl="'+data[i].playback_url+'" data-loginid="'+data[i].loginid+'" data-liveid="'+data[i].liveid+'"><p class="name">'+data[i].loginname+'</p></div><div class="video_info"><p><span>RANKING</span><i>:</i><em>'+(i+1)+'</em></p><p><span>VOTE</span><i>:</i><em>'+data[i].vote_num+'</em></p><p><span>SNAP BY</span><i>:</i><em>'+data[i].singer+'</em></p></div><div class="heart"><div class="'+styleClass+'" data-loginid="'+data[i].loginid+'"></div></div></li>';
+        	}
+        	$(".ranking").html(str);
+        	li_style();
+
+        }
+	})
+}
+
+
+function vote(hostid){
+	$.ajax({
+		url: 'https://dee.tutulive.tv:8446/api/v1/man/user/vote',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        data: {
+            pid: obj.pid,
+            hostid: hostid,
+            weak: weekTime
+        },
+        success: function(data){
+        	if( data.returncode == 200){
+        		alert("โหวตสำเร็จเเล้ว")
+        	}else if(data.returncode == 303){
+        		alert("ขออภัยค่ะ 1 User สามารถโวตให้วีเจที่ชื่นชอบได้แค่ 1 ครั้งต่ออาทิตย์เท่านั้นค่ะ :)")
+        	}
+        }
+	})
+}
+</script>	
+</body>
+</html>
