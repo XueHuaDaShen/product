@@ -1,0 +1,35 @@
+html,body{
+	width:100%;
+	height:100%;
+}
+*{
+	margin:0;
+	padding:0;
+}
+img{
+	width:100%;
+	height:100%;
+	display: block;
+}
+.container{
+	width:100%;
+	height:100%;
+}
+.main, .img_box{
+	width:100%;
+}
+.main{
+	position: relative;
+}
+.download{
+	position: absolute;
+	width:100%;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	bottom:1.38rem;
+}
+.download a{
+	display:block;
+	width:3.97rem;
+	height:.57rem;
+}

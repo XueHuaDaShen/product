@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+	<title>Document</title>
+</head>
+<style>
+html,body{
+	width:100%;
+	height:100%;
+}
+*{
+	margin:0;
+	padding:0;
+}
+img{
+	width:100%;
+	height:100%;
+}
+ul{
+	list-style: none;
+}
+li{
+	width:200px;
+	height:200px;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+}
+span{
+	display:inline-block;
+}
+span img{
+	float: none;
+}
+</style>
+<body>
+	<div class="box">
+		<ul>
+			<li onclick=del(this)><span><img src="img/banner.jpg"></span></li>
+			<li><span><img src="img/main.jpg"></span></li>
+		</ul>
+	</div>
+</body>
+</html>
+<script>
+var map = new Map();
+
+map.set('first', 'hello');
+map.set('second', 'world');
+for( var index of map){
+	console.log(index)
+}
+var arr = [1, 2, 3, 4];
+var b= arr.concat();
+var obj = {
+	a: b
+};
+obj.a.push(5);
+console.log(arr)
+console.log(b)
+console.log(obj.a)
+function del(that){
+	console.log(that)
+}
+</script>

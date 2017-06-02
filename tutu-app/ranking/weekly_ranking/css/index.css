@@ -1,0 +1,136 @@
+html,body,.container{
+	width:100%;
+	height:100%;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+img{
+	width:100%;
+	height:100%;
+	display:block;
+}
+.head{
+	width:100%;
+	z-index: -2;
+}
+.week{
+	position: relative;
+	margin-top:-16%;
+	margin-bottom:8%;
+	width:100%;
+	padding:0 10%;
+	display: -webkit-box;
+	-webkit-box-pack:justify;
+
+}
+.week div{
+	-webkit-box-flex:1;
+	margin:0 1%;
+}
+.weeked{
+	border-radius: 10px;
+	box-shadow: 0px 0px 30px #ff0079;
+}
+
+.main{
+	width:100%;
+	background:url("../img/bj.jpg");
+	background-size:100%;
+	padding-bottom:7%;
+}
+
+.top{
+	width:100%;
+	display: -webkit-box;
+	-webkit-box-pack:center;
+}
+.top div{
+	width:30%;
+	padding:2%;
+	background:url("../img/first.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+.ranking{
+	width:100%;
+}
+.ranking li{
+	width:100%;
+	margin-top:8%;
+	display: -webkit-box;
+	-webkit-box-pack:center;
+}
+.ranking li .video_img{
+	width:30%;
+	padding:2%;
+	background:url("../img/second.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+.ranking li .video_info{
+	width:40%;
+	display: -webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-box-pack:center;
+}
+.video_info p{
+	width:100%;
+	display: -webkit-box;
+}
+.video_info span{
+	color:#8A1B5F;
+	width:48%;
+	font-size: 16px;
+	display:block;
+	margin-left:5%;
+}
+.video_info i{
+	color:#8A1B5F;
+	font-size: 16px;
+	font-style: normal;
+	display:block;
+	margin-right:3%;
+}
+.video_info em{
+	color:#fff;
+	font-style: normal;
+	font-size: 16px;
+	display:block;
+	-webkit-box-flex:1;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.heart{
+	width:12%;
+	display: -webkit-box;
+	-webkit-box-align:center;
+	margin-left:5%;
+}
+.heart div{
+	width:100%;
+}
+.heart div{
+	background:url("../img/heart.png") no-repeat;
+	background-size: 100% 100%;
+}
+.heart .hearted{
+	background:url("../img/hearted.png") no-repeat;
+	background-size: 100% 100%;
+}
+.name{
+	position: relative;
+	color:#fff;
+	width:100%;
+	text-align: center;
+	font-size: 16px;
+	margin-top:8%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.foot{
+	position: relative;
+}

@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>gift_ranking</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<img src="img/head.jpg">
+			<div class="anchor">
+				<div>
+					<div class="cake"><img src="img/cake.png"></div>
+					<div class="car"><img src="img/car.png"></div>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="week">
+				<span class="weeked">WEEK 1</span>
+				<span>WEEK 2</span>
+				<span>WEEK 3</span>
+				<span>WEEK 4</span>
+			</div>
+			<div class="contai">
+				<div class="box">
+					<div class="bj_shadow bj_anchor"></div>
+				</div>
+				<section class="section anchor_section">
+					<div class="anchor_top">
+						<div class="second">
+							<img src="img/first.png">
+							<div class="second_img">
+								<img src="">
+								<span>2</span>
+							</div>
+							<p class="name"></p>
+						</div>
+						<div class="first">
+							<img src="img/first.png">
+							<div class="first_img">
+								<img src="">
+								<span>1</span>
+							</div>
+							<p class="name"></p>
+						</div>
+						<div class="third">
+							<img src="img/first.png">
+							<div class="third_img">
+								<img src="">
+								<span>3</span>
+							</div>
+							<p class="name"></p>
+						</div>
+					</div>
+					<ul class="anchor_ranking">
+						
+					</ul>
+				</section>
+			</div>
+		</main>
+		<footer class="foot">
+			<img src="img/foot.jpg" alt="">
+		</footer>
+	</div>
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+var begin1 = '2017-04-30T17:00:00+00:00';
+var end1 = '2017-05-15T17:00:00+00:00';
+var begin2 = '2017-05-15T17:00:00+00:00';
+var end2 = '2017-05-31T17:00:00+00:00';
+
+var time = new Date()*1;
+var is_status = time > (new Date('2017/05/15 23:59:59'))*1;
+var flag = "first";
+var gift = "Cake";
+var getData = [];
+var scrollNum = 0;
+$(".union_top>div").each(function(){
+	$(this).css({
+		"height": $(this).width()+"px"
+	})
+})
+$(".anchor_top>div").each(function(){
+	$(this).css({
+		"height": $(this).width()+"px"
+	})
+})
+$(".gold_top>div").each(function(){
+	$(this).css({
+		"height": $(this).width()+"px"
+	})
+})
+
+$(".cake").on("click" ,function(){
+	
+	gift = "Cake"
+	flag = "first";
+	$(".week>span").eq(0).addClass("weeked").siblings().removeClass("weeked");
+	yudan(flag, gift);
+    
+})
+$(".car").on("click" ,function(){
+	
+	gift = "Car"
+	flag = "first";
+	$(".week>span").eq(0).addClass("weeked").siblings().removeClass("weeked");
+	yudan(flag, gift);
+    
+})
+
+$(".week>span").eq(0).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/05/31 23:59:59'))*1){
+		$(this).addClass("weeked").siblings().removeClass("weeked");
+		flag = "first";
+		yudan(flag, gift);
+    }
+})
+$(".week>span").eq(1).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/06/8 23:59:59'))*1){
+		$(this).addClass("weeked").siblings().removeClass("weeked");
+		flag = "second";
+		yudan(flag, gift);
+    }
+})
+$(".week>span").eq(2).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/06/15 23:59:59'))*1){
+		$(this).addClass("weeked").siblings().removeClass("weeked");
+		flag = "third";
+		yudan(flag, gift);
+    }
+})
+$(".week>span").eq(3).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/06/23 23:59:59'))*1){
+		$(this).addClass("weeked").siblings().removeClass("weeked");
+		flag = "fourth";
+		yudan(flag, gift);
+    }
+})
+
+function img_style_p(){
+	$(".union_per_ranking .first").each(function(){
+		var w = $(this).children("img").width();
+		$(this).children("div").css({
+			"width": w+"px",
+			"height": w+"px"
+		}).children("img").css({
+			"width": "100%",
+			"height": "100%"
+		})
+	})
+	$(".union_per_ranking .second").each(function(){
+		var w = $(this).children("img").width();
+		$(this).children("div").css({
+			"width": w+"px",
+			"height": w+"px"
+		}).children("img").css({
+			"width": "100%",
+			"height": "100%"
+		})
+	})
+	$(".union_per_ranking .third").each(function(){
+		var w = $(this).children("img").width();
+		$(this).children("div").css({
+			"width": w+"px",
+			"height": w+"px"
+		}).children("img").css({
+			"width": "100%",
+			"height": "100%"
+		})
+	})
+}
+
+function li_style_p(){
+	$(".union_per_ranking li>div").each(function(){
+		$(this).css({
+			"height": $(this).width()+"px"
+		})
+	})
+}
+function img_style_m(){
+	$(".main .first").each(function(){
+		var w = $(this).children("img").width();
+		$(this).children("div").css({
+			"width": w+"px",
+			"height": w+"px"
+		}).children("img").css({
+			"width": "100%",
+			"height": "100%"
+		})
+	})
+	$(".main .second").each(function(){
+		var w = $(this).children("img").width();
+		$(this).children("div").css({
+			"width": w+"px",
+			"height": w+"px"
+		}).children("img").css({
+			"width": "100%",
+			"height": "100%"
+		})
+	})
+	$(".main .third").each(function(){
+		var w = $(this).children("img").width();
+		$(this).children("div").css({
+			"width": w+"px",
+			"height": w+"px"
+		}).children("img").css({
+			"width": "100%",
+			"height": "100%"
+		})
+	})
+}
+
+function li_style_m(){
+	$(".main li>div").each(function(){
+		$(this).css({
+			"height": $(this).width()+"px"
+		})
+	})
+}
+
+function follow(loginid) {
+    //alert("follow");
+    var query_data = {};
+    query_data.loginid = loginid;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('follow', JSON.stringify(query_data));
+        window.JSBridge.invoke('user_profile', JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'follow', JSON.stringify(query_data)]);
+    }
+}
+
+function bind_union_per_ranking(){
+	$(document).on("click", ".union_ranking>li>div>div>img", function(){
+		var id = $(this).attr("data-id");
+		var src = $(this).attr("src");
+		var name = $(this).parent().parent().next().html();
+		scrollNum = $(document).scrollTop();
+		per(id, src, name);
+		$(".union_per_ranking").show().siblings().hide()
+	    $(".per_top>div").each(function(){
+		    $(this).css({
+			    "height": $(this).width()+"px"
+		    })
+	    })
+	})
+}
+
+$(document).on("click", ".anchor_ranking>li>div>div>img", function(){
+	var id = $(this).attr("data-id");
+	follow(id)
+})
+
+
+
+
+//主播
+//鱼蛋
+yudan(flag, gift)
+function yudan(flag, gift){
+	$.ajax({
+		url: 'https://dee.tutulive.tv:8446/api/v1/man/activity/june/special/gift/rank',//'http://52.77.61.48:8040/api/v1/bi/union/host/coins/ranking',
+        method: 'get',
+        data: {
+            "flag": flag,
+            "gift": gift,
+            "date": "2017-06",
+            "type": "June"
+        },
+        success: function(data){
+        	var str = '';
+        	var _style = '';
+        	var _style2 = '';
+        	var _style_img = '';
+        	var avatarurl = '';
+        	var firstavatar = '';
+        	var secondavatar = '';
+        	var thirdavatar = '';
+        	var data = data.data;
+        	var canGift = "";
+        	canGift = gift === "Car"? "cars":"cakes"
+        	if( data == "" || data === "" ){
+	        	$(".anchor_ranking").html("暂无数据").css({
+        			"text-align": "center",
+        			"color": "#fff"
+        		});
+				$(".bj_shadow").eq(1).css("height", $(".section").eq(1).height());
+				$(".anchor_top .first_img>img").attr("src", "")
+	        	$(".anchor_top .second_img>img").attr("src", "")
+	        	$(".anchor_top .third_img>img").attr("src", "")
+	        	$(".anchor_top .first>.name").text("")
+	        	$(".anchor_top .second>.name").text("")
+	        	$(".anchor_top .third>.name").text("")
+        	}else{
+        		//鱼蛋前三名
+        		if( data[0].avatar.indexOf("i1.live.aisoqu.com") > -1 ){
+        			firstavatar = '?imageView2/1/w/100/h/100';
+        		}else{
+        			firstavatar = '';
+        		}
+        		if( data[1].avatar.indexOf("i1.live.aisoqu.com") > -1 ){
+        			secondavatar = '?imageView2/1/w/100/h/100';
+        		}else{
+        			secondavatar = '';
+        		}
+        		if( data[2].avatar.indexOf("i1.live.aisoqu.com") > -1 ){
+        			thirdavatar = '?imageView2/1/w/100/h/100';
+        		}else{
+        			thirdavatar = '';
+        		}
+	        	$(".anchor_top .first_img>img").attr("src", data[0].avatar+firstavatar)
+	        	$(".anchor_top .second_img>img").attr("src", data[1].avatar+secondavatar)
+	        	$(".anchor_top .third_img>img").attr("src", data[2].avatar+thirdavatar)
+	        	$(".anchor_top .first>.name").text(data[0].loginname)
+	        	$(".anchor_top .second>.name").text(data[1].loginname)
+	        	$(".anchor_top .third>.name").text(data[2].loginname)
+
+	        	for (var i = 0; i < data.length; i++){
+	        		if( i == 0 ){
+	        			_style = "first";
+	        			_style_img = 'first';
+	        		}else{
+	        			if( i < 5 ){
+	        				_style2 = 'red';
+	        			}else if( 5< i && i < 20 ){
+	        				_style2 = '';
+	        				_style = 'third';
+	        			}else if( i > 20 ){
+	        				_style = 'second';
+	        				_style2 = 'green';
+	        			}
+	        		}
+	        		if( data[i].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+	        			avatarurl = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			avatarurl = '';
+	        		}
+	        		str += '<li><div class="'+_style+' '+_style2+'"><img src="img/'+_style_img+'.png"><div class="'+_style+'_img"><img src="'+data[i].avatar+avatarurl+'" data-id="'+data[i].loginid+'"><span>'+(i+1)+'</span></div></div><p class="union_name">'+data[i].loginname+'</p><p class="yudan">'+data[i][canGift]+'</p></li>';
+	        	}
+
+	        	$(".anchor_ranking").html(str);
+	        	li_style_m();
+				setTimeout(function(){
+					$(".bj_anchor").css("height", $(".anchor_section").height());
+				},200)
+				img_style_m();
+				bind_union_per_ranking();
+        	}
+        	// console.log(data)
+        	
+        }
+	})
+}
+
+
+
+</script>	
+</body>
+</html>
