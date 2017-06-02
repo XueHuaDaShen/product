@@ -125,7 +125,7 @@ img{
 	overflow: hidden;
 	text-align:center;
 	margin-top:15%;
-	font-size: 20px;
+	font-size: 16px;
 	color:#fff;
 }
 
@@ -177,15 +177,15 @@ li .third{
 	width:40%;
 	position: relative;
 	margin-left: 8%;
-	margin-right:5%;
+	margin-right:10%;
 	white-space: nowrap;
 	overflow: hidden;
-	font-size: 18px;
+	font-size: 14px;
 	color:#fff;
 	text-align: center;
 }
 .yudan{
-	width:22%;
+	width:18%;
 	position: relative;
 	margin-right:3%;
 	font-size: 14px;
@@ -195,20 +195,22 @@ li .third{
 .anchor{
 	width:100%;
 	position: absolute;
-	bottom:2%;
+	bottom:-2%;
 	display:-webkit-box;
 	-webkit-box-pack:center;
 }
 .anchor>div{
 	width:50%;
-	border:2px solid #fff;
-	border-radius: 5px;
 	display:-webkit-box;
+	-webkit-box-pack:justify;
 
 }
 .anchor>div>div{
-	width:50%;
+	width:45%;
 	text-align: center;
+	border:2px solid #fff;
+	border-radius: 5px;
+	position: relative;
 }
 .anchor>div>div>img{
 	width:50%;
@@ -217,11 +219,26 @@ li .third{
 	padding:0;
 }
 .cake{
-	border-right:2px solid #fff;
-	background:#B707CD;
+	background:#BA3F82;
 }
 .car{
-	background:#2445FF;
+	background:#3E59A8;
+}
+.anchor .active{
+	background:#000;
+}
+.active .activeShadow{
+	display: block;
+}
+.activeShadow{
+	width:100%;
+	height:100%;
+	position: absolute;
+	left:0;
+	top:0;
+	background:#000;
+	opacity:0.5;
+	display: none;
 }
 .anchor>div>.car>img{
 	width:90%;
@@ -236,19 +253,20 @@ li .third{
 	margin-bottom:5%;
 	padding:0 8.5%;
 	display:-webkit-box;
-	-webkit-box-pack:justify;
+	-webkit-box-pack:center;
 	position: relative;
 }
 .week span{
   	color:#7ECFC9;
   	border:1px solid #7ECFC9;
-  	width:24%;
-  	padding:2px 0;
+  	width:25%;
+  	padding:1% 0;
   	text-align: center;
   	display:block;
   	font-size: 12px;
   	font-weight: bold;
   	border-radius: 20px;
+  	margin:0 15px;
 }
 .week .weeked{
   	color:#96C841;
@@ -299,4 +317,19 @@ li .third{
 	color:#fff;
 	font-size: 30px;
 	margin-top:2%;
+}
+.activeImg{
+	position: absolute;
+	width:100%;
+	display: -webkit-box;
+	-webkit-box-pack:center;
+	bottom:16%;
+}
+.cakeImg{
+	display: block;
+	width:27%;
+}
+.carImg{
+	display: none;
+	width:37%;
 }

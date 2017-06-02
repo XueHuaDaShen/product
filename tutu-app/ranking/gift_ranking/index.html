@@ -11,10 +11,20 @@
 	<div class="container">
 		<header class="header">
 			<img src="img/head.jpg">
+			<div class="activeImg">
+				<div class="cakeImg"><img src="img/cake.png"></div>
+				<div class="carImg"><img src="img/car.png"></div>
+			</div>
 			<div class="anchor">
 				<div>
-					<div class="cake"><img src="img/cake.png"></div>
-					<div class="car"><img src="img/car.png"></div>
+					<div class="cake">
+						<img src="img/cake.png">
+						<div class="activeShadow"></div>
+					</div>
+					<div class="car active">
+						<img src="img/car.png">
+						<div class="activeShadow"></div>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -22,8 +32,8 @@
 			<div class="week">
 				<span class="weeked">WEEK 1</span>
 				<span>WEEK 2</span>
-				<span>WEEK 3</span>
-				<span>WEEK 4</span>
+				<!-- <span>WEEK 3</span>
+				<span>WEEK 4</span> -->
 			</div>
 			<div class="contai">
 				<div class="box">
@@ -102,6 +112,10 @@ $(".cake").on("click" ,function(){
 	
 	gift = "Cake"
 	flag = "first";
+	$(this).removeClass("active");
+	$(".cakeImg").show();
+	$(".carImg").hide();
+	$(".car").addClass("active");
 	$(".week>span").eq(0).addClass("weeked").siblings().removeClass("weeked");
 	yudan(flag, gift);
     
@@ -110,6 +124,10 @@ $(".car").on("click" ,function(){
 	
 	gift = "Car"
 	flag = "first";
+	$(this).removeClass("active");
+	$(".cakeImg").hide();
+	$(".carImg").show();
+	$(".cake").addClass("active");
 	$(".week>span").eq(0).addClass("weeked").siblings().removeClass("weeked");
 	yudan(flag, gift);
     
