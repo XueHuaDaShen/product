@@ -125,7 +125,7 @@ img{
 	overflow: hidden;
 	text-align:center;
 	margin-top:15%;
-	font-size: 20px;
+	font-size: 16px;
 	color:#fff;
 }
 
@@ -217,15 +217,18 @@ li .third{
 	width:40%;
 	position: relative;
 	margin-left: 8%;
-	margin-right:5%;
+	margin-right:10%;
 	white-space: nowrap;
 	overflow: hidden;
-	font-size: 18px;
+	font-size: 14px;
 	color:#fff;
 	text-align: center;
 }
+.gold_ranking .union_name{
+	margin-right:5%;
+}
 .yudan{
-	width:22%;
+	width:18%;
 	position: relative;
 	margin-right:3%;
 	font-size: 14px;
