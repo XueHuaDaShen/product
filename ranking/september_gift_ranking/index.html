@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  	<link rel="stylesheet" href="./css/index.css">
+	<title>september_gift_ranking</title>
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<img src="./img/head.png">
+			<div class="gift">
+				<div style="width:25%"><img style="width:135%" src="./img/glassed.png"></div>
+				<div><img src="./img/shirt.png"></div>
+				<div><img src="./img/car.png"></div>
+			</div>
+			<div class="week">
+				<div><img src="./img/week1ed.png"></div>
+				<div><img src="./img/week2.png"></div>
+				<div><img src="./img/week3.png"></div>
+				<div><img src="./img/week4.png"></div>
+			</div>
+		</header>
+		<main class="main">
+			<section>
+				<ul class="list">
+					<li>
+						<div><img src="./img/head.png"><span class="triangle"></span><em class="rank">1</em></div>
+						<p class="name">XO-JSAOJ</p>
+						<p class="num">1265135</p>
+					</li>
+				</ul>
+			</section>
+		</main>
+		<footer class="footer">
+			<img src="./img/foot.png">
+		</footer>
+	</div>
+</body>
+</html>
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script>
+document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+
+var year = "2017-09", timeType = 'Sep';
+var flag = "first";
+var gift = "Champagne";
+var reqUrl = 'https://dee.tutulive.tv:8446/api/v1/man';
+// var reqUrl = 'http://123.56.6.6:8018/api/v1/man';
+// Icecream Sushi Ship
+
+$(".gift>div").eq(0).on("click" ,function(){
+		$(this).find("img").attr("src", "img/glassed.png");
+		$(".gift>div").eq(1).find("img").attr("src", "img/shirt.png");
+		$(".gift>div").eq(2).find("img").attr("src", "img/car.png");
+		flag = "first";
+		gift = "Champagne"
+		giftImg();
+		yudan(flag, gift);
+})
+$(".gift>div").eq(1).on("click" ,function(){
+		$(this).find("img").attr("src", "img/shirted.png");
+		$(".gift>div").eq(0).find("img").attr("src", "img/glass.png");
+		$(".gift>div").eq(2).find("img").attr("src", "img/car.png");
+		flag = "first";
+		gift = "Bikini"
+		giftImg();
+		yudan(flag, gift);
+})
+$(".gift>div").eq(2).on("click" ,function(){
+		$(this).find("img").attr("src", "img/cared.png");
+		$(".gift>div").eq(0).find("img").attr("src", "img/glass.png");
+		$(".gift>div").eq(1).find("img").attr("src", "img/shirt.png");
+		flag = "first";
+		gift = "Mini"
+		giftImg();
+		yudan(flag, gift);
+})
+function giftImg(){
+	$(".week>div").eq(0).find("img").attr("src", "img/week1ed.png");
+	$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+	$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+	$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+}
+
+
+
+$(".week>div").eq(0).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/08/31 23:59:59'))*1){
+		
+		$(this).find("img").attr("src", "img/week1ed.png");
+		$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+		$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+		$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+		flag = "fisrt";
+		yudan(flag, gift);
+    }
+})
+$(".week>div").eq(1).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/09/07 23:59:59'))*1){
+		
+		$(this).find("img").attr("src", "img/week2ed.png");
+		$(".week>div").eq(0).find("img").attr("src", "img/week1.png");
+		$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+		$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+		flag = "second";
+		yudan(flag, gift);
+    }
+})
+$(".week>div").eq(2).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/09/14 23:59:59'))*1){
+		
+		$(this).find("img").attr("src", "img/week3ed.png");
+		$(".week>div").eq(0).find("img").attr("src", "img/week1.png");
+		$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+		$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+		flag = "third";
+		yudan(flag, gift);
+    }
+})
+$(".week>div").eq(3).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/09/21 23:59:59'))*1){
+		
+		$(this).find("img").attr("src", "img/week4ed.png");
+		$(".week>div").eq(0).find("img").attr("src", "img/week1.png");
+		$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+		$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+		flag = "fourth";
+		yudan(flag, gift);
+    }
+})
+$(document).on("click", ".list>li>div", function(){
+	var id = $(this).attr("data-id");
+	follow(id)
+})
+function follow(loginid) {
+    //alert("follow");
+    var query_data = {};
+    query_data.loginid = loginid;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('follow', JSON.stringify(query_data));
+        window.JSBridge.invoke('user_profile', JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'follow', JSON.stringify(query_data)]);
+    }
+}
+yudan(flag, gift);
+function yudan(flag, gift){
+	$.ajax({
+		url: reqUrl+'/activity/sep/special/gift/rank',
+        method: 'get',
+        data: {
+            "flag": flag,
+            "gift": gift,
+            "date": year,
+            "type": timeType
+        },
+        success: function(data){
+        	var str = '';
+        	var _style = '';
+        	var avatarurl = '';
+        	var data = data.data;
+        	var canGift = "";
+        	switch(gift){
+        		case "Champagne":
+                    canGift =  "champagne";
+                    break;
+        		case "Bikini":
+                    canGift =  "bikini";
+                    break;
+        		case "Mini":
+                    canGift =  "mini";
+                    break;
+        	}
+        	if( data == "" || data === "" ){
+	        	$(".list").parent().hide()
+        	}else{
+
+        		$(".list").parent().show()
+	        	for (var i = 0; i < data.length; i++){
+
+	        		if( i < 9 ){
+	        			_style = "";
+	        		}else{
+	        			_style = "dbl";
+	        		}
+	        		if( data[i].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+	        			avatarurl = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			avatarurl = '';
+	        		}
+	        		str += '<li><div data-id="'+data[i].loginid+'"><img src="'+data[i].avatar+avatarurl+'"><span class="triangle"></span><em class="rank '+_style+'">'+(i+1)+'</em></div><p class="name">'+data[i].loginname+'</p><p class="num">'+data[i][canGift]+'</p></li>'
+	        	}
+
+	        	$(".list").html(str);
+        	}
+        	// console.log(data)
+        	
+        }
+	})
+}
+</script>

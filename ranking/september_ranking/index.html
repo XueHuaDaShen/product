@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  	<link rel="stylesheet" href="./css/index.css">
+	<title>september_ranking</title>
+</head>
+<body>
+	<div class="container">
+		<div class="union_per_ranking">
+			<header class="header">
+				<div class="topFirst">
+					<div class="unionTop"><span class="triangle"></span><em class="rank">1</em></div>
+					<div class="unionName">ULSLJF</div>
+					<div class="unionRange">ULSLJF</div>
+				</div>
+				<img src="./img/header.png">
+			</header>
+			<main class="main" style="padding-bottom:15%">
+				<section class="per">
+					<ul class="per_ranking">
+						<li>
+							<div><span class="triangle"></span><em class="rank">1</em></div>
+							<p class="name">XO-JSAOJ</p>
+							<p class="num">1265135</p>
+						</li>
+					</ul>
+			</section>
+			</main>
+		</div>
+		<header class="header">
+			<img src="./img/head.png">
+		</header>
+		<main class="main">
+			<section style="margin-top:-20%">
+				<ul class="union_ranking">
+					<li>
+						<div><span class="triangle"></span><em class="rank">1</em></div>
+						<p class="name">XO-JSAOJ</p>
+						<p class="num">1265135</p>
+					</li>
+				</ul>
+			</section>
+			<div class="text"><img src="./img/text1.png"></div>
+			<div class="week">
+				<div><img src="./img/week1ed.png"></div>
+				<div><img src="./img/week2.png"></div>
+				<div><img src="./img/week3.png"></div>
+				<div><img src="./img/week4.png"></div>
+			</div>
+			<section>
+				<ul class="anchor_ranking">
+					<li>
+						<div><span class="triangle"></span><em class="rank">1</em></div>
+						<p class="name">XO-JSAOJ</p>
+						<p class="num">1265135</p>
+					</li>
+				</ul>
+			</section>
+			<div class="text"><img src="./img/text2.png"></div>
+			<section>
+				<ul class="gold_ranking">
+					<li>
+						<div><span class="triangle"></span><em class="rank">1</em></div>
+						<p class="name">XO-JSAOJ</p>
+						<p class="num">1265135</p>
+					</li>
+				</ul>
+			</section>
+		</main>
+		<footer class="footer">
+			<img src="./img/foot.png">
+		</footer>
+	</div>
+</body>
+</html>
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script>
+document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+var scrollNum;
+var reqUrl = 'https://dee.tutulive.tv:8446/api/v1/man';
+// var reqUrl = 'http://123.56.6.6:8018/api/v1/man';
+
+var unionUrl = '/activity/common/union/rank';
+var unionPerUrl = '/activity/common/union/personal/list';
+var anchorUrl = '/activity/common/host/rank';
+var goldUrl = '/activity/common/consume/rank';
+
+var year = '2017-09', month = 'Sep';
+
+var flag = 'first';
+// var w = $(".topFirst .unionTop").width();
+// $(".topFirst .unionTop").css("height",w)
+$(".week>div").eq(0).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/08/31 23:59:59'))*1){
+	
+		$(this).find("img").attr("src", "img/week1ed.png");
+		$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+		$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+		$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+		flag = "first";
+		anchorFn(flag);
+    }
+})
+$(".week>div").eq(1).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/09/07 23:59:59'))*1){
+	
+		$(this).find("img").attr("src", "img/week2ed.png");
+		$(".week>div").eq(0).find("img").attr("src", "img/week1.png");
+		$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+		$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+		flag = "second";
+		anchorFn(flag);
+    }
+})
+$(".week>div").eq(2).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/09/14 23:59:59'))*1){
+	
+		$(this).find("img").attr("src", "img/week3ed.png");
+		$(".week>div").eq(0).find("img").attr("src", "img/week1.png");
+		$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+		$(".week>div").eq(3).find("img").attr("src", "img/week4.png");
+		flag = "third";
+		anchorFn(flag);
+    }
+})
+$(".week>div").eq(3).on("click" ,function(){
+	var _time = new Date();
+    if (_time*1 > (new Date('2017/09/21 23:59:59'))*1){
+	
+		$(this).find("img").attr("src", "img/week4ed.png");
+		$(".week>div").eq(0).find("img").attr("src", "img/week1.png");
+		$(".week>div").eq(1).find("img").attr("src", "img/week2.png");
+		$(".week>div").eq(2).find("img").attr("src", "img/week3.png");
+		flag = "fourth";
+		anchorFn(flag);
+    }
+})
+
+$(document).on("click", ".anchor_ranking>li>div", function(){
+	var id = $(this).attr("data-id");
+	follow(id)
+})
+$(document).on("click", ".per_ranking>li>div", function(){
+	var id = $(this).attr("data-id");
+	follow(id)
+})
+$(document).on("click", ".gold_ranking>li>div", function(){
+	var id = $(this).attr("data-id");
+	follow(id)
+})
+
+function follow(loginid) {
+    // alert("follow");
+    var query_data = {};
+    query_data.loginid = loginid;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('follow', JSON.stringify(query_data));
+        window.JSBridge.invoke('user_profile', JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'follow', JSON.stringify(query_data)]);
+    }
+}
+
+function bind_union_per_ranking(){
+	$(document).on("click", ".union_ranking>li>div", function(){
+		var id = $(this).attr("data-id");
+		var src = $(this).attr("data-src");
+		var name = $(this).attr("data-name");
+		var range = $(this).attr("data-range");
+		var rank = $(this).attr("data-rank");
+		scrollNum = $(document).scrollTop();
+		per(id, src, name, range, rank);
+		$(".union_per_ranking").show().siblings().hide()
+		var w = $(".topFirst .unionTop").width();
+		$(".topFirst .unionTop").css("height",w)
+	})
+}
+
+$(".union_per_ranking").on("click", function(){
+	var that = this;
+	setTimeout(function(){
+		$(that).hide().siblings().show();
+	}, 200)
+	$(document).scrollTop(scrollNum);
+})
+//工会
+function union(){
+	$.ajax({
+		url: reqUrl+unionUrl,
+        method: 'get',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+            //'token': token
+        },
+        data: {
+        	"date": year,
+        	"type": month
+        },
+        success: function(data){
+        	var str = '';
+        	var _style = '';
+        	var avatarurl = '';
+        	var data = data.data;
+        	// console.log(data)
+        	if( data == "" || data === "" ){
+        		$(".union_ranking").parent().hide()
+        	}else{
+        		$(".union_ranking").parent().show()
+	        	for (var i = 0; i < data.length; i++){
+	        		if( i < 9 ){
+	        			_style = "";
+	        		}else{
+	        			_style = 'dbl';
+	        		}
+	        		if( data[i].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+	        			avatarurl = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			avatarurl = '';
+	        		}
+	        		str += '<li><div data-id="'+data[i].unionid+'" data-src="'+data[i].avatar+avatarurl+'" data-name="'+data[i].unionname+'" data-range="'+data[i].range+'" data-rank="'+(i+1)+'"><img src="'+data[i].avatar+avatarurl+'"/><span class="triangle"></span><em class="rank '+_style+'">'+(i+1)+'</em></div><p class="name">'+data[i].unionname+'</p><p class="num">'+data[i].range+'</p></li>';
+	        	}
+
+	        	$(".union_ranking").html(str);
+	   			bind_union_per_ranking();
+
+        	}
+        	
+        }
+	})
+}
+union();
+
+//工会个人
+function per(id, src, name, range, rank){
+	$.ajax({
+		url: reqUrl+unionPerUrl,
+        method: 'get',
+        data: {
+        	"date": year,
+        	"type": month,
+        	"unionid": id
+        },
+        success: function(data){
+        	var str = '';
+        	var perStr = '';
+        	var _style = '';
+        	var avatarurl = '';
+        	var data = data.data;
+        	// console.log(data)
+        	if( data == "" || data === "" ){
+        		$(".per_ranking").parent().hide()
+        		$(".topFirst").hide()
+        	}else{
+
+        		$(".per_ranking").parent().show()
+        		$(".topFirst").show()
+        		//工会
+        		if( data[0].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+        			avatarurl = '?imageView2/1/w/100/h/100';
+        		}else{
+        			avatarurl = '';
+        		}
+        		if( rank < 10 ){
+        			_style = ''
+        		}else{
+        			_style = 'dbl'
+        		}
+        		perStr = '<div class="unionTop"><img src="'+src+'"/><span class="triangle"></span><em class="rank '+_style+'">'+rank+'</em></div><div class="unionName">'+name+'</div><div class="unionRange">'+range+'</div>'
+        		$(".topFirst").html(perStr)
+
+	        	for (var i = 0; i < data.length; i++){
+	        		if( i < 9 ){
+	        			_style = "";
+	        		}else{
+	        			_style = 'dbl';
+	        		}
+	        		if( data[i].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+	        			avatarurl = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			avatarurl = '';
+	        		}
+	        		str += '<li><div data-id="'+data[i].loginid+'"><img src="'+data[i].avatar+avatarurl+'"/><span class="triangle"></span><em class="rank '+_style+'">'+(i+1)+'</em></div><p class="name">'+data[i].loginname+'</p><p class="num">'+data[i].coins+'</p></li>';
+	        	}
+
+	        	$(".per_ranking").html(str);
+        	}
+        	
+        }
+	})
+}
+//主播
+anchorFn(flag)
+function anchorFn(flag){
+	$.ajax({
+		url: reqUrl+anchorUrl,
+        method: 'get',
+        data: {
+            "date": year,
+        	"type": month,
+        	"flag": flag
+        },
+        success: function(data){
+        	var str = '';
+        	var _style = '';
+        	var avatarurl = '';
+        	var data = data.data;
+        	if( data == "" || data === "" ){
+        		$(".anchor_ranking").parent().hide()
+        	}else{
+        		$(".anchor_ranking").parent().show()
+	        	for (var i = 0; i < data.length; i++){
+	        		if( i < 9 ){
+	        			_style = "";
+	        		}else{
+	        			_style = 'dbl';
+	        		}
+	        		if( data[i].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+	        			avatarurl = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			avatarurl = '';
+	        		}
+	        		str += '<li><div data-id="'+data[i].loginid+'"><img src="'+data[i].avatar+avatarurl+'"/><span class="triangle"></span><em class="rank '+_style+'">'+(i+1)+'</em></div><p class="name">'+data[i].loginname+'</p><p class="num">'+data[i].coins+'</p></li>';
+	        	}
+
+	        	$(".anchor_ranking").html(str);
+        	}
+        	// console.log(data)
+        	
+        }
+	})
+}
+//金主
+function gold(){
+	$.ajax({
+		url: reqUrl+goldUrl,
+        method: 'get',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+            //'token': token
+        },
+        data: {
+            "date": year
+        },
+        success: function(data){
+        	var str = '';
+        	var _style = '';
+        	var avatarurl = '';
+        	var data = data.data;
+        	if( data == "" || data === "" ){
+        		$(".gold_ranking").parent().hide()
+        	}else{
+        		$(".gold_ranking").parent().show()
+
+	        	for (var i = 0; i < 5; i++){
+	        		if( i < 9 ){
+	        			_style = "";
+	        		}else{
+	        			_style = 'dbl';
+	        		}
+	        		if( data[i].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+	        			avatarurl = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			avatarurl = '';
+	        		}
+	        		str += '<li><div data-id="'+data[i].loginid+'"><img src="'+data[i].avatar+avatarurl+'"/><span class="triangle"></span><em class="rank '+_style+'">'+(i+1)+'</em></div><p class="name">'+data[i].loginname+'</p><p class="num">'+data[i].diamonds+'</p></li>';
+	        	}
+
+	        	$(".gold_ranking").html(str);
+        	}
+        	// console.log(data);
+        	
+        }
+	})
+}
+gold()
+</script>

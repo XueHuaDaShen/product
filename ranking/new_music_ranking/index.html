@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<img src="img/new_head.jpg">
+		</header>
+		<main class="main">
+			<div class="our_singer">
+				<div class="singer_box">
+					
+				</div>
+			</div>
+			<div class="text">
+				<b>MUSIC HOUR OUR MUSIC</b>
+				<p>เตรียม!! ตื่นตา  กับความสนุกรูปแบบใหม่ในการไลฟ์ของ TuTu Live</p>
+				<p>ใครชอบอะไรแปลกใหม่ เตรียมพร้อมยัง ที่จะพบการไลฟ์สด</p>
+				<p>แบบคมชัดจัดเต็ม  ในแอปพลิเคชั่น <a href="javascript:;">TuTu Live</a> ที่เดิม เพิ่มเติมคือ </p>
+				<p style="margin-top:10px;">ผ่าน Channel เฉพาะจากทางทูทู!! แถมความมันส์</p>
+				<p>ที่มากับเสียงดนตรี พร้อมพบเหล่านักร้องคนดัง ที่อยากมาร้องเพลงสดๆ</p>
+				<p>จัดตารางสลับสับเปลี่ยนกัน มามอบความสนุก ความสุข แบบจัดหนัก</p>
+				<p>จัดเต็มให้ทุกคน แค่นั้นยังไม่พอ <em>TuTu Live</em> ขอเอาใจคนรักเสียงดนตรี</p>
+				<p>เปิดพื้นที่ให้คนที่ชอบร้องเพลง ฟังดนตรี มา <em>On the floor!</em></p>
+				<p style="margin-top:10px;">ไลฟ์สดร้องเพลงแสดงดนตรีกันได้อย่างเต็มที่ เพราะกิจกรรมครั้งนี้</p>
+				<p>เราเอาใจคนรักเสียงดนตรีโดยเฉพาะ</p>
+				<b style="margin-bottom:5px;margin-top:15px;text-decoration: none;">ระยะเวลากิจกรรม</b>
+				<p>เริ่ม <em>12 – 31</em> มีนาคม ผู้สนใจเข้าร่วมกิจกรรมแค่เตรียมคลิปวิดีโอ</p>
+				<p>ของตัวเองที่ร้องเพลง หรือเล่นดนตรี ให้พร้อม แล้วส่งเข้าร่วมสมัคร</p>
+				<p style="margin-top:10px;">ขอแค่มีใจรักเสียงดนตรี ชอบฟัง ร้องเพลง ชอบเล่นดนตรี</p>
+				<p>ทูทูก็พร้อมเปิดพื้นที่ให้ทุกคนแล้ว</p>
+			</div>
+			<div class="download">
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLSdSSxXlOk1Ujq4oszZybAHbwU26MldEiVtMzmGqOUt1hc5_xg/viewform?c=0&w=1"><img src="img/download.png"></a>
+			</div>
+			<div class="log"><span><img src="img/tutu.png"></span></div>
+		</main>
+	</div>
+
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script>
+document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+var data = {};
+var monthArr = ["Jan", "Febr", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+var getData;
+var showData;
+data.flags = 'MusicHour';
+$.ajax({
+	url: 'https://dee.tutulive.tv:8446/api/v1/man/user/livestatus',
+    type: 'get',
+    data: data,
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    async: false,
+    success: function(result){
+    	if(result.returncode == 200){
+    		getData = result.lives;
+    		showData = result.show;
+    		var str2 = '';
+    		var c_name;
+    		var num = 0;
+    		for(var i = 0; i< showData.length; i++){
+    			var txt;
+    			if( showData[i].avatar ){
+                    var loginid = showData[i].loginid;
+    				if( num%2 == 0 ){
+	    				txt = 'left';
+	    			}else{
+	    				txt = 'right';
+	    			}
+    				num++;
+    				if( showData[i].playback_url ){
+
+    					c_name = "after";
+    					var span = ''
+                    	var PB_url = showData[i].playback_url;
+                    	var avatar = showData[i].avatar;
+    					var liveid = PB_url.split('/');
+	                    liveid = liveid[liveid.length - 2];
+	                    liveid = liveid.split('.');
+	                    liveid = liveid[liveid.length - 1];
+	                    span = '<span data-loginid="'+loginid+'" data-avatar="'+avatar+'" data-pb_url="'+PB_url+'" data-liveid="'+liveid+'" class="'+c_name+'"></span>'
+    				}else{
+    					span = '';
+    				}
+    				str2 += '<div class="'+txt+'"><div><img data-loginid="'+loginid+'" class="following" src="'+showData[i].avatar+'">'+span+'</div><p class="time">'+showData[i].play_time+'</p></div>';
+    			}
+    		}
+    		$(".singer_box").html(str2)
+    	}
+    }
+})
+
+
+$(".following").each(function(){
+	$(this).on("click", function(){
+		var loginid = $(this).data("loginid");
+		var span = $(this).next();
+		if(span.length){
+			var loginid = $(span).data("loginid");
+			var avatar = $(span).data("avatar");
+			var PB_url = $(span).data("pb_url");
+			var liveid = $(span).data("liveid");
+			record_live(loginid, avatar, PB_url, liveid)
+		}else{
+			follow(loginid)
+		}
+	})
+})
+
+
+
+function follow(loginid) {
+    //alert("follow");
+    var query_data = {};
+    query_data.loginid = loginid;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('follow', JSON.stringify(query_data));
+        window.JSBridge.invoke('user_profile', JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'follow', JSON.stringify(query_data)]);
+    }
+}
+
+//进入直播间
+function inliveingroom(liveid, url) {
+    //alert("in live room");
+    var query_data = {};
+    query_data.liveid = liveid;
+    query_data.url = url;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('live', JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'live', JSON.stringify(query_data)]);
+    }
+}
+
+
+//回放
+function record_live(loginid, avatar, stream_path, liveid) {
+    //alert("record_live");
+    var query_data = {};
+    query_data.loginid = loginid;
+    query_data.avatar = avatar;
+    query_data.stream_path = stream_path;
+    query_data.liveid = liveid;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('record_live', JSON.stringify(query_data));
+        //window.JSBridge.invoke('user_profile',JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'record_live', JSON.stringify(query_data)]);
+    }
+}
+
+</script>	
+</body>
+</html>

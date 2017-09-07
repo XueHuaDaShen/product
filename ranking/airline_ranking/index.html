@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>airline_ranking</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<img src="img/head.png">
+		</header>
+		<main class="main">
+			<div class="contai">
+				<div class="box">
+					<div class="bj_shadow bj_anchor"></div>
+					<div class="copyShdow">
+						<div>
+							<span class="iconImg imgtl"><img src="./img/icon.png"></span>
+							<span class="iconImg imgtr"><img src="./img/icon.png"></span>
+							<span class="iconImg imgdl"><img src="./img/icon.png"></span>
+							<span class="iconImg imgdr"><img src="./img/icon.png"></span>
+						</div>
+					</div>
+				</div>
+				<section class="section anchor_section">
+					<div class="anchor_top">
+						<div class="second">
+							<img src="img/first.png">
+							<div class="second_img">
+								<img src="">
+								<span>2</span>
+							</div>
+							<p class="name"></p>
+						</div>
+						<div class="first">
+							<img src="img/first.png">
+							<div class="first_img">
+								<img src="">
+								<span>1</span>
+							</div>
+							<p class="name"></p>
+						</div>
+						<div class="third">
+							<img src="img/first.png">
+							<div class="third_img">
+								<img src="">
+								<span>3</span>
+							</div>
+							<p class="name"></p>
+						</div>
+					</div>
+					<ul class="anchor_ranking">
+						
+					</ul>
+				</section>
+			</div>
+		</main>
+		<footer class="foot">
+			<img src="img/foot.png" alt="">
+		</footer>
+	</div>
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+var tutuUrl = 'https://dee.tutulive.tv:8447/api/v2/bi',
+	aliyunUrl = 'http://123.56.6.6:8040/api/v2/bi';
+
+$(".anchor_top>div").each(function(){
+	$(this).css({
+		"height": $(this).width()+"px"
+	})
+})
+
+
+function img_style_m(){
+	$(".main .first").each(function(){
+		var w = $(this).children("img").width();
+		$(this).children("div").css({
+			"width": w+"px",
+			"height": w+"px"
+		}).children("img").css({
+			"width": "100%",
+			"height": "100%"
+		})
+	})
+	$(".main .second").each(function(){
+		var w = $(this).children("img").width();
+		$(this).children("div").css({
+			"width": w+"px",
+			"height": w+"px"
+		}).children("img").css({
+			"width": "100%",
+			"height": "100%"
+		})
+	})
+	$(".main .third").each(function(){
+		var w = $(this).children("img").width();
+		$(this).children("div").css({
+			"width": w+"px",
+			"height": w+"px"
+		}).children("img").css({
+			"width": "100%",
+			"height": "100%"
+		})
+	})
+}
+
+function li_style_m(){
+	$(".main li>div").each(function(){
+		$(this).css({
+			"height": $(this).width()+"px"
+		})
+	})
+}
+
+function follow(loginid) {
+    //alert("follow");
+    var query_data = {};
+    query_data.loginid = loginid;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('follow', JSON.stringify(query_data));
+        window.JSBridge.invoke('user_profile', JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'follow', JSON.stringify(query_data)]);
+    }
+}
+
+
+
+$(document).on("click", ".anchor_ranking>li>div>div>img", function(){
+	var id = $(this).attr("data-id");
+	follow(id)
+})
+
+
+
+
+//主播
+//鱼蛋
+yudan()
+function yudan(){
+	$.ajax({
+		url: tutuUrl+'/gift/special/rank',
+        method: 'post',
+        data: {
+            product: 2000,
+            begintime: '2017-07-29T00:00:00',
+            endtime: '2017-07-31T23:59:59',
+            size: 50
+        },
+        success: function(data){
+        	var str = '';
+        	var _style = '';
+        	var _style2 = '';
+        	var _style_img = '';
+        	var avatarurl = '';
+        	var firstavatar = '';
+        	var secondavatar = '';
+        	var thirdavatar = '';
+        	var data = data.data;
+        	if( data == "" || data === "" ){
+	        	$(".anchor_ranking").html("暂无数据").css({
+        			"text-align": "center",
+        			"color": "#fff"
+        		});
+				$(".bj_shadow").eq(1).css("height", $(".section").eq(1).height());
+				$(".anchor_top .first_img>img").attr("src", "")
+	        	$(".anchor_top .second_img>img").attr("src", "")
+	        	$(".anchor_top .third_img>img").attr("src", "")
+	        	$(".anchor_top .first>.name").text("")
+	        	$(".anchor_top .second>.name").text("")
+	        	$(".anchor_top .third>.name").text("")
+        	}else{
+        		//鱼蛋前三名
+        		var len = data.length;
+        		if(len>=1){
+					if( data[0].avatar.indexOf("i1.live.aisoqu.com") > -1 ){
+	        			firstavatar = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			firstavatar = '';
+	        		}
+		        	$(".anchor_top .first_img>img").attr("src", data[0].avatar+firstavatar)
+
+		        	$(".anchor_top .first>.name").text(data[0].loginname)
+
+        		}else if(len>=2){
+        			if( data[1].avatar.indexOf("i1.live.aisoqu.com") > -1 ){
+	        			secondavatar = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			secondavatar = '';
+	        		}
+	        		$(".anchor_top .first_img>img").attr("src", data[1].avatar+firstavatar)
+
+		        	$(".anchor_top .first>.name").text(data[1].loginname)
+        		}else if(len>=3){
+        			if( data[2].avatar.indexOf("i1.live.aisoqu.com") > -1 ){
+	        			thirdavatar = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			thirdavatar = '';
+	        		}
+	        		$(".anchor_top .first_img>img").attr("src", data[2].avatar+firstavatar)
+
+		        	$(".anchor_top .first>.name").text(data[2].loginname)
+        		}
+
+	        	for (var i = 0; i < data.length; i++){
+
+	        		if( i == 0 ){
+	        			_style = "first";
+	        			_style_img = 'first';
+	        		}else{
+	        			_style = "second";
+	        			_style_img = 'second'
+	        			_style2 = 'red';
+	        		}
+	        		if( data[i].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+	        			avatarurl = '?imageView2/1/w/100/h/100';
+	        		}else{
+	        			avatarurl = '';
+	        		}
+	        		str += '<li><div class="'+_style+' '+_style2+'"><img src="img/'+_style_img+'.png"><div class="'+_style+'_img"><img src="'+data[i].avatar+avatarurl+'" data-id="'+data[i].loginid+'"><span>'+(i+1)+'</span></div></div><p class="union_name">'+data[i].loginname+'</p><p class="yudan">'+data[i].count+'</p></li>';
+	        	}
+
+	        	$(".anchor_ranking").html(str);
+	        	li_style_m();
+				img_style_m();
+				setTimeout(function(){
+					$(".bj_anchor").css("height", $("section").outerHeight());
+				},200)
+        	}
+        	// console.log(data)
+        	
+        }
+	})
+}
+
+
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,106 @@
+body,html, img{
+	width:100%;
+	height:100%;
+}
+.main{
+	width: 100%;
+	height:100%;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+img{
+	display: block;
+}
+.container{
+	width:100%;
+	height:100%;
+}
+.content{
+	position: relative;
+}
+.imgBtn1{
+	width:60%;
+	height:3%;
+	position: absolute;
+	display:-webkit-box;
+	-webkit-box-pack:justify;
+	top:31.5%;
+	right:0;
+}
+.imgBtn1 img{
+	width:47%;
+}
+.imgBtn1 .followImg{
+	width:45%;
+	margin-left:2%;
+}
+.imgBtn1 .roomImg{
+	margin-right:3%;
+}
+
+.imgBtn2{
+	width:60%;
+	height:3%;
+	position: absolute;
+	display:-webkit-box;
+	-webkit-box-pack:justify;
+	top:43.5%;
+	left:0;
+}
+.imgBtn2 img{
+	width:47%;
+}
+.imgBtn2 .followImg{
+	width:45%;
+	margin-left:2%;
+}
+.imgBtn2 .roomImg{
+	margin-right:3%;
+}
+
+
+.imgBtn3{
+	width:60%;
+	height:3%;
+	position: absolute;
+	display:-webkit-box;
+	-webkit-box-pack:justify;
+	top:56%;
+	right:0;
+}
+.imgBtn3 img{
+	width:47%;
+}
+.imgBtn3 .followImg{
+	width:45%;
+	margin-left:2%;
+}
+.imgBtn3 .roomImg{
+	margin-right:3%;
+}
+
+
+.imgBtn4{
+	width:60%;
+	height:3%;
+	position: absolute;
+	display:-webkit-box;
+	-webkit-box-pack:justify;
+	top:68.5%;
+	left:0;
+}
+.imgBtn4 img{
+	width:47%;
+}
+.imgBtn4 .followImg{
+	width:45%;
+	margin-left:2%;
+}
+.imgBtn4 .roomImg{
+	margin-right:3%;
+}
+

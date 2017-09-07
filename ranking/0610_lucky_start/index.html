@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="container">
+		<main class="main">
+			<div class="content">
+				<img src="img/main.jpg" alt="">
+				
+				<div class="imgBtn1">
+					<img src="img/follow.png" class="followImg" onclick=follow("000264860edc5ad93fdf84b5")>
+					<img src="img/go_room.png" class="roomImg" onclick=is_Live("000264860edc5ad93fdf84b5")>
+				</div>
+				<div class="imgBtn2">
+					<img src="img/follow.png" class="followImg" onclick=follow("0001bcd7bd7c9fb32126d8ce")>
+					<img src="img/go_room.png" class="roomImg" onclick=is_Live("0001bcd7bd7c9fb32126d8ce")>
+				</div>
+				<div class="imgBtn3">
+					<img src="img/follow.png" class="followImg" onclick=follow("000fd74312174842151a0f07")>
+					<img src="img/go_room.png" class="roomImg" onclick=is_Live("000fd74312174842151a0f07")>
+				</div>
+				<div class="imgBtn4">
+					<img src="img/follow.png" class="followImg" onclick=follow("000fd745a840c13c155df16f")>
+					<img src="img/go_room.png" class="roomImg" onclick=is_Live("000fd745a840c13c155df16f")>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
+<script src="jquery.js"></script>
+<script>
+// document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+function follow(loginid) {
+    //alert("follow");
+    // console.log(loginid)
+    var query_data = {};
+    query_data.loginid = loginid;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('follow', JSON.stringify(query_data));
+        window.JSBridge.invoke('user_profile', JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'follow', JSON.stringify(query_data)]);
+    }
+}
+function record_live(stream_path, liveid, avatar, loginid) {
+    //alert("record_live");
+    var query_data = {};
+    query_data.loginid = loginid;
+    query_data.avatar = avatar;
+    query_data.liveid = liveid;
+    query_data.stream_path = stream_path;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('record_live', JSON.stringify(query_data));
+        //window.JSBridge.invoke('user_profile',JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'record_live', JSON.stringify(query_data)]);
+    }
+}
+function is_Live(loginid){
+	$.ajax({
+		url: 'http://123.56.6.6:8018/api/v1/man/live/stat?loginid='+loginid,
+        method: 'get',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            //'token': token
+        },
+        success: function(data){
+        	var data = data.data;
+        	// console.log(data)
+
+        	if( !is_empty(data) ){
+        		// console.log('empty')
+        		return false;
+        	}else{
+        		record_live(data.andr_pull_stream, data.liveid, '', data.loginid)
+        	}
+
+        }
+	})
+}
+function is_empty(obj){
+	for(var k in obj){
+		return true;
+	}
+	return false;
+}
+</script>

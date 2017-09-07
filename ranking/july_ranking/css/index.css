@@ -1,0 +1,297 @@
+html,body,.container{
+	width:100%;
+	height:100%;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+img{
+	width:100%;
+	display:block;
+}
+.main{
+	width:100%;
+	background:url("../img/bj.png");
+	background-size:100%;
+	padding-bottom:5%;
+	z-index: -2;
+}
+
+.main .contai{
+	width:100%;
+	padding:0 8.5%;
+	position: relative;
+}
+.section{
+	width:100%;
+}
+.box{
+	width:100%;
+	padding:0 8.5%;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.bj_shadow{
+	width:100%;
+	border-radius: 5px;
+	background:#000;
+	opacity:0.5;
+	left:0;
+	top:0;
+}
+
+
+
+.topThree,.per_top{
+	width:100%;
+	display:-webkit-box;
+	-webkit-box-pack: center;
+	position: relative;
+}
+.topThree .first,.per_top .first{
+	/*width:30%;*/
+	width:35%;
+	margin-top:2%;
+	
+}
+.topThree .first>div,.per_top .first>div{
+	position: relative;
+	background:none;
+}
+.firstImg{
+	width:80%;
+	height:80%;
+	position: absolute;
+	left:10%;
+	top:10%;
+}
+.first>div>img{
+	position: relative;
+}
+.firstImg>img{
+	width:100%;
+	height:100%;
+	display:block;
+	border-radius: 50%;
+}
+.topThree .second{
+	margin-top: 20%;
+	margin-right:2%;
+}
+.topThree .third{
+	margin-top: 20%;
+	margin-left:2%;
+}
+.topThree>div{
+	width:22%;
+	/*width:28%*/
+}
+.topThree>div>div{
+	width:100%;
+	position:relative;
+	/*background:url("http://i1.live.aisoqu.com/kik.jpeg?imageView2/1/w/100/h/100") no-repeat;*/
+	/*background-size:cover;*/
+	border-radius: 50%;
+	overflow: hidden;
+}
+.topThreeUnionName{
+	font-size: 16px;
+	color:#fff;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.second>p,.third>p{
+	margin-top: 5%;
+}
+
+.list,.per_ranking{
+	position: relative;
+	width:100%;
+	overflow: hidden;
+}
+.list1{
+	margin-top:7%;
+}
+.list li,.per_ranking li{
+	width:100%;
+	position: relative;
+	overflow: hidden;
+	margin-bottom:15px;
+	display:-webkit-box;
+	-webkit-box-pack:justify;
+	-webkit-box-align:center;
+}
+.gold{
+	margin-left:4%;
+	width:19%;
+	border-radius: 50%;
+	background: url("http://i1.live.aisoqu.com/XO.png?imageView2/1/w/100/h/100") no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	overflow: hidden;
+}
+.gold em{
+	position: absolute;
+	left:44%;
+	bottom:4px;
+	font-style: normal;
+	color:#fff;
+	font-size: 12px;
+}
+.gold .em{
+	left:37%;
+}
+/*.list2 .gold em{
+	-webkit-text-fill-color: #332518;
+	-webkit-text-stroke: .1px #fff;
+}*/
+.list2{
+	margin-top:10%;
+}
+.yudan{
+	margin-right:7%;
+	font-size: 14px;
+	width:16%;
+	text-align: right;
+	overflow: hidden;
+	color:#fff;
+}
+.loginname{
+	width:45%;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 14px;
+	color:#fff;
+}
+
+.text{
+	width:100%;
+	margin-top:13%;
+}
+.text img{
+	width:50%;
+	margin: 0 auto;
+}
+
+.week{
+	position: relative;
+	width:100%;
+	padding:0 5%;
+	margin-bottom: 8%;
+	display: -webkit-box;
+	-webkit-box-pack:justify;
+
+}
+.week div{
+	-webkit-box-flex:1;
+	margin:0 1%;
+}
+.week .weeked{
+	border-radius: 10px;
+}
+
+.per_ranking em{
+	position: absolute;
+	left:45%;
+	bottom:9px;
+	font-style: normal;
+	color:#fff;
+	font-size: 12px;
+}
+.per_ranking .em{
+	left:38%;
+}
+
+.gold_ranking, .per_ranking{
+	width:100%;
+	margin-top:10%;
+	padding-bottom:10%;
+}
+
+.gold_ranking li:first-child, .per_ranking li:first-child{
+	margin-top: 0;
+}
+.gold_ranking li, .per_ranking li{
+	width:100%;
+	padding-left:5%;
+	margin-top: 7%;
+	display:-webkit-box;
+	-webkit-box-align:center;
+}
+.gold_ranking li>div{
+	width:19%;
+	position: relative;
+	border-radius: 50%;
+	box-shadow: 0px 0px 30px #ca43af;
+}
+.gold_ranking li img{
+	width:100%;
+	height:100%;
+}
+.gold_ranking li>div>div>span{
+	font-size:14px;
+	width:40%;
+	height:40%;
+	position: absolute;
+	left:30%;
+	bottom:-10%;
+	border:2px solid #000;
+	border-radius: 50%;
+	box-shadow: 0px 0px 1px #000;
+	color:#fff;
+	background: #ca43af;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+}
+
+.union_name{
+	width:40%;
+	position: relative;
+	margin-left: 8%;
+	margin-right:5%;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 18px;
+	color:#fff;
+	text-align: center;
+}
+.yudan2{
+	width:22%;
+	position: relative;
+	margin-right:3%;
+	font-size: 14px;
+	color:#ACABA7;
+}
+.first_img, .second_img, .third_img{
+	width:100%;
+	height:100%;
+	position: absolute;
+	padding:5%;
+	left:0;
+	top:0;
+}
+
+.first_img>img, .second_img>img, .third_img>img{
+	border-radius: 50%;
+}
+.gold_ranking li>div.red {
+    box-shadow: 0px 0px 30px #bc265e;
+}
+
+.union_per_ranking{
+	width: 100%;
+    min-height: 100%;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    background: url(../img/bj.png);
+    background-size: 100%;
+}
