@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>January_gift_ranking</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id="rule">
+            <span class="close"></span>
+            <img src="img/rule.png">
+        </div>
+        <header class="header">
+            <img src="img/head.png">
+        </header>
+        <div id="content">
+            <main class="main">
+                <section class="section">
+                    <div class="top ruleBtn"><img src="img/top.png"></div>
+                    <div class="gift">
+                        <div class="cup"><img src="img/cup.gif"></div>
+                        <div class="bikini"><img src="img/bikini.png"></div>
+                        <div class="boat"><img src="img/boat.png"></div>
+                    </div>
+                    <div class="giftTxt">
+                        <div class="cup"><p class="txt">CHAMPAGNE</p></div>
+                        <div class="bikini"><p class="txt">BIKINI</p></div>
+                        <div class="boat"><p class="txt">YATCH</p></div>
+                    </div>
+                    <div class="week">
+                        <div class="left"><img src="img/left.png"></div>
+                        <div class="text">วันที่ 1-7 มกราคม 2018</div>
+                        <div class="right"><img src="img/right.png"></div>
+                    </div>
+                    <div id="countDown">
+                        <span id="day">6</span> DAY
+                        <span id="hour">24</span> :
+                        <span id="minutes">00</span> :
+                        <span id="seconds">00</span>
+                    </div>
+                    <div class="ranking">
+                        <div class="ranking_wrap">
+                            <div class="title">จัดอันดับ</div>
+                            <ul id="list">
+                                <!-- <li>
+                                    <span class="rank">1</span>
+                                    <div class="avatar"><img src="img/head.png"></div>
+                                    <p class="name">VJ NAME</p>
+                                    <p class="num">200000</p>
+                                </li> -->
+                            </ul>
+                            <div class="more">MORE</div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+
+// var reqUrl = 'https://dee.tutulive.tv:8446/api/v1/man';
+var reqUrl = 'http://123.56.6.6:8018/api/v1/man';
+
+var textArr = ['วันที่ 1-7 มกราคม 2018', 'วันที่ 8-14 มกราคม 2018', 'วันที่ 15-21 มกราคม 2018', 'วันที่ 22-31 มกราคม 2018'];
+var countDownTime = ['2018-01-08 00:00:00', '2018-01-15 00:00:00', '2018-01-22 00:00:00', '2018-02-01 00:00:00'];
+var weekTime = [
+	'2018/12/31 23:59:59',
+	'2018/01/07 23:59:59',
+	'2018/01/14 23:59:59',
+	'2018/01/21 23:59:59'
+];
+var flagArr = ['first', 'second', 'third', 'fourth']
+var flag=flagArr[0], gift = "Champagne";
+var year = "2018-01", timeType = 'Jan';
+
+var pageData = {
+    url: reqUrl+'/activity/2018/jan/gift/rank',
+    data: [],
+    length: 0,
+    page: 1,
+    size: 10,
+    canGift: ''
+}
+
+function follow(loginid) {
+    //alert("follow");
+    var query_data = {};
+    query_data.loginid = loginid;
+    if (window.webkit == null) {
+        window.JSBridge.invoke('follow', JSON.stringify(query_data));
+        window.JSBridge.invoke('user_profile', JSON.stringify(query_data));
+    } else {
+        window.webkit.messageHandlers.JSBridge.postMessage(['invoke', 'follow', JSON.stringify(query_data)]);
+    }
+}
+
+var future = new Date(countDownTime[0]);
+function initTime(){
+    $(".text").html(textArr[0])
+    future = new Date(countDownTime[0]);
+    
+}
+function initObj(){
+    pageData = {
+        url: reqUrl+'/activity/2018/jan/gift/rank',
+        data: [],
+        length: 0,
+        page: 1,
+        size: 10,
+        canGift: ''
+    }
+}
+
+function timeDbl(time){
+	var val = time>9 ? time : '0'+time;
+	return val;
+}
+function countDown(){
+	var now = new Date();
+	var diff = future-now;
+	var day = Math.floor(diff/1000/60/60/24);
+	var hour = Math.floor(diff/1000/60/60%24);
+	var minutes = Math.floor(diff/1000/60%60);
+	var seconds = Math.floor(diff/1000%60);
+	hour = timeDbl(hour);
+	minutes = timeDbl(minutes);
+	seconds = timeDbl(seconds);
+	$("#day").html(day);
+	$("#hour").html(hour);
+	$("#minutes").html(minutes);
+	$("#seconds").html(seconds);
+}
+countDown()
+setInterval(countDown,1000)
+
+$(".left").on("click", function(){
+    var index = textArr.indexOf($(".text").html());
+    index = index == 0? index : index-1;
+    if( index == 0 ) return false;
+    $(".text").html(textArr[index])
+    flag = flagArr[index];
+    future = new Date(countDownTime[index]);
+    initObj();
+    getList(flag, gift);
+    // console.log("flag: ", flag)
+    // console.log("gift: ", gift)
+})
+$(".right").on("click", function(){
+    var index = textArr.indexOf($(".text").html());
+    index = index == textArr.length-1? textArr.length-1 : index+1;
+    var nowTime = new Date();
+    var activityTime = new Date(weekTime[index]);
+    if( nowTime*1 < activityTime*1 ) return false;
+    $(".text").html(textArr[index]);
+    flag = flagArr[index];
+    future = new Date(countDownTime[index]);
+    initObj();
+    getList(flag, gift);
+    // console.log("flag: ", flag)
+    // console.log("gift: ", gift)
+})
+
+$(".ruleBtn").on("click", function(){
+    $("#rule").show();
+    $("#wrap").css({
+        height: $("#rule").height(),
+        overflow: 'hidden'
+    })
+    $(".close").css({
+        height: $(".close").width()
+    })
+})
+$(".close").on("click", function(){
+    $("#rule").hide();
+    $("#wrap").css({
+        height: "100%",
+        overflow: 'visible'
+    })
+})
+function avatarStyle(){
+    $(".avatar").each(function(){
+        $(this).css({
+            height: $(this).width()
+        })
+    })
+}
+// avatarStyle();
+
+$(".gift>div").eq(0).on("click" ,function(){
+		$(this).find("img").attr("src", "img/cup.gif");
+		$(".gift>div").eq(1).find("img").attr("src", "img/bikini.png");
+		$(".gift>div").eq(2).find("img").attr("src", "img/boat.png");
+		flag = "first";
+		gift = "Champagne";
+        initTime();
+        initObj();
+		getList(flag, gift);
+})
+$(".gift>div").eq(1).on("click" ,function(){
+		$(this).find("img").attr("src", "img/bikini.gif");
+		$(".gift>div").eq(0).find("img").attr("src", "img/cup.png");
+		$(".gift>div").eq(2).find("img").attr("src", "img/boat.png");
+		flag = "first";
+		gift = "Bikini";
+        initTime();
+        initObj();
+		getList(flag, gift);
+})
+$(".gift>div").eq(2).on("click" ,function(){
+		$(this).find("img").attr("src", "img/boat.gif");
+		$(".gift>div").eq(0).find("img").attr("src", "img/cup.png");
+		$(".gift>div").eq(1).find("img").attr("src", "img/bikini.png");
+		flag = "first";
+		gift = "Yacht";
+        initTime();
+        initObj();
+		getList(flag, gift);
+})
+$(".more").on("click", function(){
+    pageData.page++
+    var page = pageData.page,
+        size = pageData.size,
+        len = pageData.data.length,
+        totalPage = Math.ceil(len/size);
+    // console.log('totalPage:',totalPage)
+    // console.log('page:',page)
+    if( page == totalPage ){
+        $(this).html("∧ FOLDING")
+    }else if( page > totalPage ){
+        pageData.page = 1;
+        $(this).html("MORE")
+        $("#list").html('');
+    }
+    giftCallback(pageData.data);
+})
+getList(flag, gift)
+function getList(flag, gift){
+	$.ajax({
+		url: pageData.url,
+        method: 'get',
+        data: {
+            "flag": flag,
+            "gift": gift,
+            "date": year,
+            "type": timeType
+        },
+        success: function(data){
+        	// var data = data.data;
+            
+        	switch(gift){
+        		case "Champagne":
+                    pageData.canGift =  "champagne";
+                    break;
+        		case "Bikini":
+                    pageData.canGift =  "bikini";
+                    break;
+        		case "Yacht":
+                    pageData.canGift =  "yacht";
+                    break;
+        	}
+        	console.log(data)
+            $("#list").html('');
+            pageData.data = data.data;
+            giftCallback(pageData.data);
+        },
+        error: function(){
+            $(".ranking").hide();
+        }
+	})
+}
+function giftCallback(data){
+    if( data.length == 0 ){
+        $(".ranking").hide()
+    }else{
+        $(".ranking").show()
+        var page = pageData.page,
+            size = pageData.size,
+            len = pageData.data.length;
+        var str = '',
+            img = '',
+            avatarurl = '',
+            start = (page-1)*size,
+            end = start+10<=len? start+10:len,
+            loaded = page*size;
+        // console.log('end:',end)
+        for(var i=start; i<end; i++){
+
+            if( data[i].avatar.indexOf('i1.live.aisoqu.com') > -1 ){
+                avatarurl = '?imageView2/1/w/100/h/100';
+            }else{
+                avatarurl = '';
+            }
+            str += '<li><span class="rank">'+(i+1)+'</span><div class="avatar" data-id="'+data[i].loginid+'"><img src="'+data[i].avatar+avatarurl+'"></div><p class="name">'+data[i].loginname+'</p><p class="num">'+data[i][pageData.canGift]+'</p></li>';
+        }
+        $("#list").append(str);
+        avatarStyle();
+    }
+}
+$(document).on("click", "#list>li>.avatar", function(){
+    var id = $(this).data("id");
+    // console.log(id)
+    follow(id)
+})
+</script>

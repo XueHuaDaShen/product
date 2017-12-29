@@ -1,0 +1,198 @@
+@font-face {
+  font-family: MyFont;
+  src: url("../fonts/SanamDeklen_chaya.ttf");
+}
+html, body {
+  font-family: MyFont;
+}
+
+html, body, img, #wrap {
+  width: 100%;
+  height: 100%;
+}
+
+#rule {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#rule .close {
+  width: 15%;
+  border-radius: 50%;
+  position: absolute;
+  right: 2%;
+  top: .5%;
+}
+
+#wrap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+img {
+  display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+#content {
+  width: 100%;
+  -webkit-box-flex: 1;
+  background: url("../img/bj.png");
+  background-size: 100%;
+}
+
+.main {
+  width: 100%;
+  padding: 0 5%;
+  background: url("../img/bj.png");
+  background-size: 100%;
+  padding-bottom: 20%;
+}
+.main .section {
+  width: 100%;
+  border: 5px solid #fff;
+  border-radius: 20px;
+  background: #01FFFF;
+  overflow: hidden;
+}
+.main .top {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  margin-top: 5%;
+}
+.main .top img {
+  width: 25%;
+}
+.main .gift {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-pack: justify;
+  margin-top: 5%;
+}
+.main .gift div {
+  width: 30%;
+}
+.main .gift .cup {
+  margin-left: 4%;
+}
+.main .gift .boat {
+  margin-right: 4%;
+}
+.main .giftTxt {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-pack: justify;
+  margin-top: 5%;
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 0px 0px 5px #000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.main .giftTxt div {
+  width: 30%;
+  text-align: center;
+}
+.main .giftTxt .cup {
+  margin-left: 4%;
+}
+.main .giftTxt .boat {
+  margin-right: 4%;
+}
+.main .week {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  margin-top: 10%;
+}
+.main .week .text {
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0px 0px 5px #000;
+}
+.main .week .left, .main .week .right {
+  width: 4%;
+}
+.main .week .left {
+  margin-right: 4%;
+}
+.main .week .right {
+  margin-left: 4%;
+}
+.main #countDown {
+  color: #FF879A;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2%;
+}
+.main .ranking {
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 8%;
+  margin-bottom: 20%;
+}
+.main .ranking .ranking_wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.main .ranking .title, .main .ranking .more {
+  width: 100%;
+  text-align: center;
+  background: #B7B7B7;
+  padding-top: 3%;
+}
+.main .ranking #list {
+  width: 100%;
+  background: #fff;
+}
+.main .ranking li {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+  padding: 2% 4%;
+  border-bottom: 2px solid #000;
+}
+.main .ranking li .rank {
+  display: block;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 3%;
+}
+.main .ranking li .avatar {
+  width: 18%;
+  border: 1px solid #000;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main .ranking li .name {
+  width: 45%;
+}
+.main .ranking li .num {
+  width: 22%;
+}
+.main .ranking li .name, .main .ranking li .num {
+  color: #F5709F;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 3%;
+}
+
+/*# sourceMappingURL=index.css.map */
