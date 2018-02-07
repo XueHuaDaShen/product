@@ -1,0 +1,313 @@
+html,body,.home-wrap{
+    width:100%;
+    height:100%;
+    background:#191919;
+    font-size:.28rem;
+    color:#fff;
+    font-family: 'PingFangSC-Medium';
+}
+img{
+    display:block;
+    width:100%;
+    height:100%;
+}
+ul,ol,li{
+    list-style:none;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.home-wrap{
+    padding-top:5%;
+    padding-bottom:5%;
+    overflow-y:auto;
+    position: relative;
+    .alert-wrap{
+        width:100%;
+        height:100%;
+        display:none;
+        position: absolute;
+        left:0;
+        top:0;
+        .bj{
+            width:100%;
+            height:100%;
+            background:#000;
+            opacity:.5;
+        }
+        .alert-content{
+            width:92%;
+            left:4%;
+            position: absolute;
+            z-index:99;
+            top:20%;
+            padding:5% 10% 6%;
+            background:#191919;
+            border-radius:5px;
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+            -webkit-box-pack:justify;
+            -webkit-box-align:center;
+            input{
+                border:none;
+                background:#272727;
+                padding:12px 14px;
+                border-radius:40px;
+                color:#fff;
+            }
+            input:focus{
+                outline: none;
+            }
+        }
+        .alert-title{
+            width:100%;
+            text-align:center;
+            font-size:.34rem;
+            margin-bottom:5%;
+        }
+        .invite-text{
+            width:100%;
+            margin-bottom:5%;
+            font-size:.26rem;
+            p{
+                margin:0;
+                padding:0;
+                line-height: 24px;
+                color:#646464;
+                // word-break:break-all;
+            }
+            .invite-text-break{
+                text-indent: 2ex;
+            }
+        }
+        .alert-input{
+            position: relative;
+            margin-bottom:10%;
+            .invite-code-tip{
+                position: absolute;
+                left:0;
+                bottom:-20px;
+                text-align:center;
+                width:100%;
+                color:#cc1177;
+                display: none;
+            }
+            input{
+                width:100%;
+            }
+            width:100%;
+        }
+        .alert-btn{
+            width:100%;
+            display:-webkit-box;
+            -webkit-box-pack:justify;
+            -webkit-box-align:center;
+            font-size:.34rem;
+            span{
+                display:block;
+                width:43.5%;
+                padding:3% 0;
+                display:-webkit-box;
+                -webkit-box-pack:center;
+                -webkit-box-align:center;
+                border-radius:40px;
+            }
+            span.confirm{
+                background:#cc1177;
+            }
+            span.cancel{
+                background:#646464;
+            }
+        }
+    }
+    .header{
+        display:-webkit-box;
+        -webkit-box-pack:justify;
+        padding:0 2%;
+        .logo{
+            width:32%;
+        }
+        .eval, .rule{
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+            -webkit-box-align:center;
+            padding-top:2%;
+            img{
+                width:50%;
+                margin-bottom:5%;
+            }
+            span{
+                color:#646464;
+            }
+        }
+    }
+    .start-time-txt{
+        width:100%;
+        text-align:center;
+        margin-top:5%;
+    }
+    .time-and-prize{
+        width:100%;
+        margin-top:5%;
+        display:-webkit-box;
+        -webkit-box-pack:center;
+        -webkit-box-align:center;
+        .split-line{
+            width:2px;
+            padding:4% 0;
+            background:#d8d8d8;;
+        }
+        span{
+            display:block;
+            width:50%;
+            text-align:center;
+            font-size:.46rem;
+        }
+    }
+    .goLiveHouse{
+        width:100%;
+        margin-top:5%;
+        margin-bottom:5%;
+        display:-webkit-box;
+        -webkit-box-pack:center;
+        span{
+            display:block;
+            width:30.7%;
+            padding:2% 0;
+            text-align:center;
+            background:#646464;
+            border-radius:40px;
+        }
+        span.living{
+            color:#cc1177;
+        }
+    }
+    .user-info{
+        width:92%;
+        height:47%;
+        margin:0 auto;
+        margin-bottom:5%;
+        background:#272727;
+        border-radius:10px;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        .user-top{
+            width:100%;
+            height:35%;
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+            -webkit-box-pack:center;
+            -webkit-box-align:center;
+            .avatar{
+                width:14.5%;
+                border-radius:50%;
+                overflow:hidden;
+            }
+            .user-name{
+                font-size:.44rem;
+            }
+        }
+        .user-cen{
+            width:100%;
+            height:45%;
+            border-top:2px solid #2f2f2f;
+            border-bottom:2px solid #2f2f2f;
+            display:-webkit-box;
+            .split-line{
+                width:2px;
+                height:100%;
+                background:#2f2f2f;
+            }
+            .balance, .week-rank{
+                width:50%;
+                display:-webkit-box;
+                -webkit-box-orient:vertical;
+                -webkit-box-pack:center;
+                -webkit-box-align:center;
+                .des{
+                    font-size:.28rem;
+                }
+                .des-num{
+                    color:#cc1177;
+                    font-size:.66rem;
+                }
+                .none{
+                    display:none;
+                }
+                .num-none{
+                    width:18.2%;
+                    display:-webkit-box;
+                    -webkit-box-pack:center;
+                    -webkit-box-align:center;
+                    span{
+                        display:block;
+                        width:100%;
+                        height:4px;
+                        background:#cc1177;
+                    }
+                }
+            }
+        }
+        .user-bot{
+            width:100%;
+            -webkit-box-flex:1;
+            display:-webkit-box;
+            -webkit-box-pack:justify;
+            -webkit-box-align:center;
+            .life-txt{
+                color:#646464;
+                margin-left:9%;
+            }
+            .life-num{
+                width:11.7%;
+                position: relative;
+                background:none;
+                font-size:.28rem;
+                margin-left:5.5%;
+                span{
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    width:100%;
+                    height:100%;
+                    display:-webkit-box;
+                    -webkit-box-pack:center;
+                    -webkit-box-align:center;
+                }
+            }
+            .getLife{
+                display:-webkit-box;
+                -webkit-box-pack:center;
+                -webkit-box-align:center;
+                border-radius:40px;
+                border:1px solid #646464;
+                color:#646464;
+                font-size:.32rem;
+                margin-right:7%;
+                padding:1.5% 3%;
+                span{
+                    display: block;
+                }
+            }
+        }
+    }
+    .footer{
+        width:92%;
+        height:7.6%;
+        margin:0 auto;
+        display:-webkit-box;
+        -webkit-box-pack:justify;
+        margin-bottom:5%;
+        div{
+            width:100%;
+            display:-webkit-box;
+            -webkit-box-align:center;
+            -webkit-box-pack:center;
+            background:#272727;
+            font-size:.32rem;
+            border-radius:40px;
+        }
+    }
+}

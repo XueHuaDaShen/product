@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/getCode.css">
+    <title>Come and win cash prize for getting answers right!</title>
+</head>
+<body>
+    
+    <div class="get-code-wrap">
+        <div class="code-crad">
+            <div class="code-title">Extra Lives</div>
+            <div class="life-icon"><img src="../img/lifeed.png"></div>
+            <div class="des-text">YOUR REFERRAK CODE：</div>
+            <div class="invite-code"></div>
+        </div>
+        <div class="invite-text">
+            <p>1. Get an extra life respectively by inviting a friend to sign up with your referral code</p>
+            <p>2. Extra lives are applied automatically</p>
+            <p>3. There are only 3 chances per game</p>
+        </div>
+        <div class="get-code-btn"><span>Share</span></div>
+    </div>
+</body>
+</html>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/config.js"></script>
+<script>
+document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+
+$(function(){
+
+    if(isiOS){
+        $(".code-title").css({
+            marginBottom: '0'
+        })
+    }
+
+    $(".get-code-btn").on("click", function(){
+        shareFollow();
+    })
+
+    function getInviteCode() {
+        $.ajax({
+            url: serverUrl + '/revive/share',
+            type: "post",
+            data: {
+                loginid: obj.loginid
+            },
+            success: function(data){
+                var code = data.returncode;
+                // console.log(data)
+                // alert(code)
+                if(code == 200){
+                    // userDataCB(obj);
+                    $(".invite-code").html(data.data.revive_code);
+                } else if (code == '201') {
+                    // that.isResult = true;
+                } else if (code == '301') {
+                    console.log('Parameter error');
+                } else if (code == '303') {
+                    console.log('Parameter error');
+                }
+            },
+            fail: function() {
+                console.log('Ajax Error');
+            }
+
+        })
+    }
+    getInviteCode();
+})
+</script>

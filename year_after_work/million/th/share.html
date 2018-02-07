@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Come and win cash prize for getting answers right!</title>
+</head>
+<style>
+html,body{
+    width:100%;
+    height:100%;
+}
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    box-sizing:border-box;
+}
+#myHomeFrame{
+    display:block;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    border:none;
+    box-sizing:border-box;
+}
+</style>
+<body>
+    <img src="img/invite-img.png" style="position:absolute;left:0;top:0;opacity:0;z-index:-99999;width:100%;height:auto">
+</body>
+</html>
+<script src="js/config.js"></script>
+<script>
+var language = navigator.language;
+
+if( !language ){
+    location.href = 'html/share-en.html?loginid='+obj.loginid+'&token='+obj.prize;
+}
+if( language.indexOf('zh') > -1 ){
+    //中文
+    location.href = 'html/share-zh.html?loginid='+obj.loginid+'&token='+obj.prize;
+}else if( language.indexOf('th') > -1 ){
+    //泰文
+    location.href = 'html/share-th.html?loginid='+obj.loginid+'&token='+obj.prize;
+}else{
+    //英文
+    location.href = 'html/share-en.html?loginid='+obj.loginid+'&token='+obj.prize;
+}
+</script>

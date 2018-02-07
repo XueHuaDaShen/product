@@ -1,0 +1,369 @@
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+width:12px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+-webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+border-radius:10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+border-radius:10px;
+background:rgba(0,0,0,0.4);
+-webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+}
+// ::-webkit-scrollbar-thumb:window-inactive {
+// background:rgba(255,0,0,0.4);
+// }
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    margin: 0;
+    padding: 0 10px 0 240px;
+    height: 62px;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: #fff;
+    line-height: 62px;
+    background: #34495E !important;
+    position: fixed;
+    width: 100%;
+    z-index: 11;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.sidebar-collapse {
+    height: 100%;
+}
+
+.sidebar {
+    background: #34495E;
+    color: #cccccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 240px;
+    z-index: 12;
+    overflow: hidden;
+    // border-right: 1px solid #666;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.sidebar .sidebar-header {
+    padding: 10px 35px;
+    height: 62px;
+    line-height: 62px;
+    text-align: center;
+    position: relative;
+    background: #34495E !important;
+    border-bottom: 1px solid #666;
+}
+
+.sidebar .sidebar-header img {
+    width: 170px;
+    text-align: center;
+    margin: -5px 1px 20px 0;
+}
+
+.sidebar .sidebar-menu {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 270px;
+    position: absolute;
+    top: 62px;
+    bottom: 0;
+    left: 0;
+}
+
+.sidebar ul.nav.nav-sidebar {
+    margin: 0;
+    width: 240px;
+    // position: relative;
+    // height: 100%;
+    // padding: 23px 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#menu {
+    // height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 0;
+    width: 270px;
+}
+
+.bk-avatar {
+    position: relative;
+}
+
+.bk-avatar img.bk-img-60 {
+    width: 60px;
+    height: 60px;
+}
+
+.bk-padding-top-10 {
+    padding-top: 10px !important;
+}
+
+.divider2 {
+    background-image: -webkit-linear-gradient(left, transparent, #777, transparent);
+    background-image: -moz-linear-gradient(left, transparent, #777, transparent);
+    background-image: -ms-linear-gradient(left, transparent, #777, transparent);
+    background-image: -o-linear-gradient(left, transparent, #777, transparent);
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+}
+
+.sidebar ul.nav.nav-sidebar li {
+    margin: 5px 0;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    position: relative;
+}
+
+.sidebar ul.nav.nav-sidebar li a {
+    font-size: 13px;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidebar ul.nav.nav-sidebar li > a {
+    padding: 10px 25px;
+}
+
+.sidebar ul.nav.nav-sidebar li a {
+    line-height: 13px;
+    font-size: 13px;
+    font-weight: 400;
+    border: 1px solid transparent;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.sidebar ul.nav.nav-sidebar li i {
+    font-size: 18px;
+    font-size: 1.8rem;
+    width: 1.1em;
+    margin-right: 0.5em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sidebar ul.nav.nav-sidebar li span {
+    vertical-align: middle;
+}
+
+.sidebar ul.nav.nav-sidebar li span {
+    vertical-align: middle;
+}
+
+.label-primary {
+    background: #34495E;
+    color: white;
+}
+
+.label {
+    font-size: 10px;
+    padding: 4px 6px;
+    border: none;
+    text-shadow: none;
+    border-radius: 0;
+    font-weight: normal;
+}
+
+.sidebar a {
+    color: #fff;
+    background-color: none;
+}
+
+.sidebar ul.nav.nav-sidebar li > a:hover,
+ul.nav-sidebar li > a:focus {
+    background-color: transparent;
+}
+
+.sidebar ul.nav.nav-sidebar li a:hover {
+    border-top-color: #435D78;
+    border-bottom-color: #435D78;
+    color: #fff;
+    background-color: #435D78;
+}
+
+.sidebar ul.nav.nav-sidebar li a.activePage {
+    border-top-color: #435D78;
+    border-bottom-color: #435D78;
+    color: #fff;
+    background-color: #435D78;
+}
+
+.sidebar ul.nav.nav-sidebar li:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.sidebar ul.nav.nav-sidebar li.nav-parent {
+    position: relative;
+}
+
+.sidebar ul.nav.nav-sidebar li.nav-parent > a {
+    cursor: pointer;
+}
+
+.sc {
+    position: absolute;
+    left: 0;
+    right: -5px;
+    top: 137px;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 99;
+    color: #cccccc;
+}
+
+.sc li {
+    display: block!important;
+    height: 42px;
+
+    a {
+        width: 240px;
+        height: 40px;
+        display: block;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.sidebar ul.nav.nav-sidebar li.nav-parent > a:after {
+    font-family: 'FontAwesome';
+    content: '\f107';
+    font-size: 16px;
+    font-size: 1.6rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 14px 25px;
+}
+
+.right {
+    position: absolute;
+    top: 75px;
+    left: 260px;
+    right: 30px;
+}
+
+
+
+/*new style*/
+
+.img_info{
+    display: -webkit-box;
+    -webkit-box-flex:1;
+    padding-left:0;
+}
+.img_info input{
+    width:50%;
+}
+.img_info span{
+    display: block;
+    margin-right:5px;
+}
+.img_info_box{
+    display:-webkit-box;
+    padding-left:0;
+    margin-bottom:10px;
+}
+.img_info_box:last-child{
+    margin-bottom:0;
+}
+
+
+//.off li:nth-child(n + 2) {
+//    height: 0!important;
+//    border: 0!important;
+//    a {
+//        display: none;
+//    }
+//}
+//
+//.on li:nth-child(n + 2) {
+//    height: 42px!important;
+//    border: 1px!important;
+//    a {
+//        display: block;
+//    }
+//}
+
+.slide-fade-enter-active {
+    //transition: all 1s ease;
+    animation: slide-in .2s ease;
+}
+.slide-fade-leave-active {
+    //transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    animation: slide-out .2s;
+}
+
+//.slide-fade-enter, .slide-fade-leave-active {
+//    opacity: 0;
+//    //max-height: 10px;
+//}
+
+@keyframes slide-in {
+    0% {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    100% {
+        max-height: 1000px;
+        opacity: 1;
+
+    }
+
+}
+
+@keyframes slide-out {
+    0% {
+        max-height: 1000px;
+        opacity: 1;
+    }
+
+    100% {
+        max-height: 0;
+        opacity: 0;
+
+    }
+
+}
+
+.subicon2 {
+    position: relative;
+    top: -2px;
+}
+.subul {
+    padding-left: 0px;
+    a{
+        padding-left: 55px!important;
+    }
+}

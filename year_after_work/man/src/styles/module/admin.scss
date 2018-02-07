@@ -1,0 +1,25 @@
+.addTips {
+    text-align: center;
+    color: red;
+}
+.addTips2 {
+    text-align: center;
+    color: lightgreen;
+}
+.rolelist {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    input {
+        width: 12px;
+        height: 12px;
+    }
+    label {
+        margin-right: 3px;
+        padding-top: 6px;
+    }
+}
+
+.adminrole {
+    margin-right: 5px!important;
+}

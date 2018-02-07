@@ -1,0 +1,105 @@
+html, body, .share-wrap {
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  font-size: .4rem;
+  color: #fff;
+  font-family: 'PingFangSC-Medium';
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.share-wrap {
+  padding-top: 5%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  background: url("../img/share_bj.png") no-repeat;
+  background-size: 100% 100%;
+}
+.share-wrap .header {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  padding: 0 2%;
+  margin-bottom: 3%;
+}
+.share-wrap .header .logo {
+  width: 20.7%;
+}
+.share-wrap .cup {
+  width: 55%;
+  margin: 0 auto;
+}
+.share-wrap .winner-user {
+  width: 87.2%;
+  min-height: 33%;
+  margin: 0 auto;
+  background: #272727;
+  border-radius: 10px;
+  margin-top: 5%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
+.share-wrap .winner-user .user-avatar {
+  width: 20%;
+  margin-bottom: 3%;
+}
+.share-wrap .winner-user .user-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.share-wrap .winner-user .user-name {
+  font-size: .34rem;
+  margin-bottom: 5%;
+}
+.share-wrap .winner-user .prize-txt {
+  font-size: .4rem;
+  margin-bottom: 3%;
+  padding: 0 7%;
+}
+.share-wrap .winner-user .prize-txt .prize-num {
+  color: #fff100;
+}
+.share-wrap .winner-user .correct-txt {
+  font-size: 18px;
+}
+.share-wrap .winner-user .correct-txt .correct-num, .share-wrap .winner-user .correct-txt .ratio {
+  color: #e6bf06;
+}
+.share-wrap .start-answer {
+  width: 60.3%;
+  height: 6.4%;
+  margin: 0 auto;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  background: #cc1177;
+  font-size: .34rem;
+  border-radius: 40px;
+  margin-top: 5%;
+}
+.share-wrap .footer-tag {
+  color: #646464;
+  margin-top: 3%;
+  text-align: center;
+  font-size: .24rem;
+}
+
+/*# sourceMappingURL=share.css.map */

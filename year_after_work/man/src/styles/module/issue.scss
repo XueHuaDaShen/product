@@ -1,0 +1,369 @@
+*{
+	box-sizing:border-box;
+}
+/*活动wrap*/
+.myIssue-wrap{
+	width:80%;
+	max-width:800px;
+	margin:0 auto;
+}
+.myIssue-top{
+	width:100%;
+	margin-bottom:6%;
+	position:relative;
+	.top-content{
+		width:100%;
+		padding:.5% 5%;
+		background:#000;
+		border-radius:8px;
+		text-align:center;
+		font-size:18px;
+		color:#fff;
+		font-weight:bold;
+	}
+	img{
+		width:50px;
+		height:auto;
+	}
+}
+.my-question-tip{
+	position:absolute;
+	left:0;
+	bottom:-35px;
+	text-align:center;
+	width:100%;
+	font-size:16px;
+}
+.my-question-tip-ok{
+	color: lightgreen;
+}
+.my-question-tip-err{
+	color: red;
+}
+/*活动未开始，活动列表*/
+.myTip{
+	width:100%;
+	position:absolute;
+	left:0;
+	bottom:0;
+	color:#F56C6C;
+	font-size:18px;
+	text-align:center;
+}
+.guess-activity{
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	padding: 15% 0 10% 0;
+	position:relative;
+	label{
+		margin:0;
+		font-size:18px;
+		margin-right:5%;
+		display:block;
+	}
+}
+.activity-start-btn{
+	width:100%;
+	padding:5% 0 10% 0;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	.start-btn{
+		width:30%;
+		height:60px;
+		border:none;
+		text-align:center;
+		font-size:24px;
+		font-weight:bold;
+		display:block;
+		background:#000;
+		color:#fff;
+		border-radius:40px;
+		cursor:pointer;
+		-webkit-user-select: none; 
+	    -moz-user-select: none;    
+	    -khtml-user-select: none;  
+	    -ms-user-select: none;    
+
+	    /* 以下两个属性目前并未支持，写在这里为了减少风险 */
+	    -o-user-select: none;
+	    user-select: none;
+	}
+	.start-btn:focus{
+		outline:none;
+	}
+	.start-btn:hover{
+		background:#222;
+	}
+	.start-btn:active{
+		background:#333;
+	}
+}
+
+/*活动开始，question 序号*/
+.current-questions-num{
+	font-size:40px;
+	font-weight:bold;
+	color:#000;
+	text-align:center;
+	padding:5% 0;
+}
+/*活动开始，question*/
+.current-questions{
+	font-size:40px;
+	font-weight:bold;
+	color:#000;
+	padding:5% 0;
+}
+
+/*活动开始，question*/
+.question-wrap, .activity-info, .result-wrap{
+	width:100%;
+	padding: 3% 8%;
+	box-shadow: 0px 0px 5px 2px #ccc;
+	border-radius:8px;
+	position:relative;
+}
+
+.question-title{
+	text-align:center;
+	color:#000;
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:13%;
+}
+.activity-start>.current-questions>.options{
+	-webkit-box-pack:start;
+}
+.options{
+	width:90%;
+	margin-left:10%;
+	position:relative;
+	padding:3% 4%;
+	margin-bottom:5%;
+	border-radius:40px;
+	border:1px solid #777;
+	color:#777;
+	font-size:18px;
+	display:-webkit-box;
+	-webkit-box-pack:justify;
+	p{
+		margin:0;
+	}
+	.options-title-tag{
+		position:absolute;
+		font-style:normal;
+		color:#000;
+		font-size:30px;
+		font-weight:bold;
+		left: -10%;
+		top: 50%;
+		margin-top: -20px;
+	}
+}
+.options-err{
+	border:1px solid #ccc;
+}
+.options-ok{
+	background:#777;
+	color:#fff;
+}
+.people-winner{
+	color:#cc1177;
+}
+.people-loser{
+	color:#777;
+}
+.question-explain-wrap{
+	width:100%;
+	padding:0 5%;
+	color:#000;
+	margin-top:4%;
+	.question-explain-title{
+		font-size:16px;
+		font-weight:bold;
+	}
+	.question-explain-content{
+		position:relative;
+		.introduce{
+			width:100%;
+			font-size:22px;
+			line-height:28px;
+		}
+		.introduce-down{
+			overflow:hidden;
+			text-overflow: ellipsis;
+			white-space:nowrap;
+		}
+		.introduce-up{
+			white-space:normal;
+		}
+		.myDrop{
+			cursor:pointer;
+			position:absolute;
+			right:-15px;
+            width:8px;
+            height:8px;
+		}
+		.drop-down{
+			top:2px;
+            border-bottom: 2px solid  #646464;
+            border-right: 2px solid  #646464;
+            transform:rotate(45deg);
+            -ms-transform:rotate(45deg); 	/* IE 9 */
+            -moz-transform:rotate(45deg); 	/* Firefox */
+            -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+            -o-transform:rotate(45deg);
+		}
+		.drop-up{
+			top:7px;
+            border-top: 2px solid  #646464;
+            border-left: 2px solid  #646464;
+            transform:rotate(45deg);
+            -ms-transform:rotate(45deg); 	/* IE 9 */
+            -moz-transform:rotate(45deg); 	/* Firefox */
+            -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+            -o-transform:rotate(45deg);
+		}
+	}
+}
+.question-reback{
+	text-align:center;
+	height:40px;
+	line-height:40px;
+	background:#d8d8d8;
+	box-shadow: inset 0 0 3px 0;
+	color:#000;
+	font-size:16px;
+	font-weight:bold;
+	width:100%;
+	margin:0;
+	.people-reback{
+		color:#cc1177;
+		font-size:20px;
+	}
+}
+.operation-btn{
+	width:100%;
+	margin-top:7%;
+	padding-bottom:3%;
+	display:-webkit-box;
+	-webkit-box-pack:justify;
+	.mybtn{
+		width:20%;
+		height:60px;
+		display:block;
+		border:none;
+		text-align:center;
+		background:#000;
+		color:#fff;
+		font-size:18px;
+		border-radius:30px;
+		cursor: pointer;
+		-webkit-user-select: none; 
+	    -moz-user-select: none;    
+	    -khtml-user-select: none;  
+	    -ms-user-select: none;    
+
+	    /* 以下两个属性目前并未支持，写在这里为了减少风险 */
+	    -o-user-select: none;
+	    user-select: none;
+	}
+	.mybtn:focus{
+		outline:none;
+	}
+	.mybtn:hover{
+		background:#222;
+	}
+	.mybtn:active{
+		background:#333;
+	}
+	.disabled{
+		background:#ccc;
+		cursor: inherit;
+	}
+	button.disabled:hover{
+		background:#ccc;
+	}
+	button.disabled:active{
+		background:#ccc;
+	}
+}
+
+/*活动结果*/
+.result-wrap{
+	.result-txt-wrap{
+		display:-webkit-box;
+		-webkit-box-pack:justify;
+		div{
+			width:50%;
+			padding:2% 3%;
+		}
+		.result-txt-txt{
+			font-size:18px;
+			text-align:right;
+		}
+		.result-txt-num{
+			color:#cc1177;
+			font-size:20px;
+		}
+	}
+}
+.result-btn{
+	width:100%;
+	margin-top:7%;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	button{
+		width:20%;
+		height:60px;
+		display:block;
+		border:none;
+		text-align:center;
+		background:#000;
+		color:#fff;
+		font-size:18px;
+		border-radius:30px;
+		cursor: pointer;
+		-webkit-user-select: none; 
+	    -moz-user-select: none;    
+	    -khtml-user-select: none;  
+	    -ms-user-select: none;    
+
+	    /* 以下两个属性目前并未支持，写在这里为了减少风险 */
+	    -o-user-select: none;
+	    user-select: none;
+	}
+	button:focus{
+		outline:none;
+	}
+	button:hover{
+		background:#222;
+	}
+	button:active{
+		background:#333;
+	}
+	.disabled{
+		background:#ccc;
+		cursor: inherit;
+	}
+}
+
+/*答题倒计时*/
+.question-countDown{
+	width:100%;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	.count-down{
+		color:#000;
+		font-size:24px;
+		width:50px;
+		height:50px;
+		line-height:50px;
+		text-align:center;
+		border-radius:50%;
+		border:1px solid #000;
+		display:block;
+	}
+}

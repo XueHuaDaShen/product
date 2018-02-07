@@ -1,0 +1,71 @@
+.ARform {
+    width: 70%;
+    margin: 0 0 0 50px;
+    // select {
+    //     margin: 30px 30px 30px 0;
+    // }
+}
+.select1l, .select2l, .check1l, .check2l{
+    float: left;
+    width: 20%;
+    margin-bottom: 150px;
+    font-size: 16px;
+}
+#select1, #select2, #check1, #check2{
+    float: right;
+    width: 75%;
+    margin-bottom: 10px;
+}
+.agentR {
+    padding-top: 30px;
+}
+.hideid{
+    display: none;
+}
+.tipsWrap {
+    height: 30px;
+}
+.tips1R{
+    width: 86%;
+    float: right;
+    color: lightgreen;
+    text-align: center;
+    font-size: 14px;
+}
+.tips2R {
+    width: 86%;
+    float: right;
+    color: red;
+    text-align: center;
+    font-size: 14px;
+
+}
+.btnRight {
+    margin: 10px 0 20px;
+    width: 66px;
+    height: 40px;
+    font-size: 16px;
+}
+.btnRightWrap {
+    text-align: center;
+}
+.AM-topL {
+    width: 95%;
+    text-align: center;
+    input {
+        width: 50%;
+    }
+    margin-left: 2px auto;
+    box-sizing: border-box;
+}
+.btnC {
+    margin-right: 100px;
+}
+.message1, .message2 {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+.messageWrap {
+    text-align: center;
+}

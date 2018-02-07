@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home</title>
+</head>
+<style>
+html,body{
+    width:100%;
+    height:100%;
+}
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    box-sizing:border-box;
+}
+#myHomeFrame{
+    display:block;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    border:none;
+    box-sizing:border-box;
+    overflow-y: auto;
+}
+</style>
+<body>
+    <!-- <iframe src="html/home-en.html" name="newframe" frameborder="0" id="myHomeFrame"></iframe>  -->
+</body>
+</html>
+<script src="js/config.js"></script>
+<script>
+// var language = navigator.language;
+// var frame = document.getElementById("myHomeFrame");
+
+if( !obj.language ){
+    location.href = 'html/home-en.html?loginid='+obj.loginid+'&token='+obj.token+'&language='+obj.language+'&cc='+obj.cc;
+}
+if( obj.language.indexOf('zh') > -1 ){
+    //中文
+    location.href = 'html/home-zh.html?loginid='+obj.loginid+'&token='+obj.token+'&language='+obj.language+'&cc='+obj.cc;
+}else if( obj.language.indexOf('th') > -1 ){
+    //泰文
+    location.href = 'html/home-th.html?loginid='+obj.loginid+'&token='+obj.token+'&language='+obj.language+'&cc='+obj.cc;
+}else{
+    //英文
+    location.href = 'html/home-en.html?loginid='+obj.loginid+'&token='+obj.token+'&language='+obj.language+'&cc='+obj.cc;
+}
+</script>

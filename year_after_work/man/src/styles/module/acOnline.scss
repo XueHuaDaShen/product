@@ -1,0 +1,36 @@
+.acName {
+    width: 80%;
+}
+.hasMR {
+    margin-right: 15px;
+}
+
+.acdel1 {
+    margin: 0 10px;
+    color: #428bca;
+}
+.sign_hide{
+	display:none;
+}
+.sign_show{
+	display:block;
+}
+#_add{
+	position:absolute;
+	right:15px;
+	bottom:10px;
+}
+.del{
+	position:absolute;
+	right:50px;
+	bottom:0;
+}
+
+.showImg img{
+	width:100%;
+	height:auto;
+}
+.showImg iframe{
+	height:500px;
+	width:auto;
+}

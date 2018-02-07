@@ -1,0 +1,84 @@
+html, body, .get-code-wrap {
+  width: 100%;
+  height: 100%;
+  background: #131313;
+  font-size: 14px;
+  color: #fff;
+  font-family: 'PingFangSC-Medium';
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.get-code-wrap {
+  padding-top: 5%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  position: relative;
+}
+.get-code-wrap .code-crad {
+  width: 87.2%;
+  min-height: 33%;
+  margin: 0 auto;
+  background: #272727;
+  border-radius: 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  position: relative;
+}
+.get-code-wrap .code-crad .code-title {
+  width: 100%;
+  padding-right: 4.4%;
+  text-align: right;
+  font-size: .32rem;
+  margin-bottom: 2%;
+}
+.get-code-wrap .code-crad .life-icon {
+  width: 28.1%;
+}
+.get-code-wrap .code-crad .des-text {
+  color: #646464;
+  font-size: .3rem;
+  margin-top: 2%;
+}
+.get-code-wrap .code-crad .invite-code {
+  color: #fff;
+  font-size: .88rem;
+}
+.get-code-wrap .invite-text {
+  width: 86.7%;
+  margin: 0 auto;
+  margin-top: 5%;
+  color: #646464;
+  line-height: 26px;
+  font-size: .26rem;
+}
+.get-code-wrap .get-code-btn {
+  width: 60.3%;
+  height: 6.4%;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  border-radius: 40px;
+  background: #cc1177;
+  font-size: .34rem;
+  margin: 0 auto;
+  margin-top: 30%;
+}
+
+/*# sourceMappingURL=getCode.css.map */

@@ -1,0 +1,89 @@
+.authorityWrap {
+    padding: 5px 30px;
+}
+
+h3.with-line {
+    font-size: 20px;
+    border-bottom: 1px solid #d6d6d6;
+    color: #666666;
+    font-weight: 400;
+    margin-bottom: 14px;
+    line-height: 39px;
+    width: 100%;
+}
+
+.au-tips1 {
+    left: 5%;
+}
+
+.au-tips2 {
+    left: 5%;
+}
+
+.au-tips3 {
+    left: 51.5%;
+}
+
+.au-tips4 {
+    left: 51.5%;
+}
+
+.au-menu,
+.au-role {
+    font-size: 14px;
+
+    label {
+        padding-left: 25px;
+    }
+
+    input {
+        line-height: 14px;
+    }
+}
+
+.au-save {
+    float: left;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.AM-tips5 {
+    float: left;
+    color: lightgreen;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+
+.AM-tips6 {
+    float: left;
+    color: red;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    margin-left: 20px;
+    margin-top: 7px;
+}

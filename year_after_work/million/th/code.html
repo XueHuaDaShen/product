@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Come and win cash prize for getting answers right!</title>
+</head>
+<style>
+html,body{
+    width:100%;
+    height:100%;
+}
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    box-sizing:border-box;
+}
+</style>
+<body>
+    
+</body>
+</html>
+<script src="js/config.js"></script>
+<script>
+
+if( !obj.language ){
+    location.href = 'html/getCode-en.html?loginid='+obj.loginid;
+}
+if( obj.language.indexOf('zh') > -1 ){
+    //中文
+    location.href = 'html/getCode-zh.html?loginid='+obj.loginid;
+}else if( obj.language.indexOf('th') > -1 ){
+    //泰文
+    location.href = 'html/getCode-th.html?loginid='+obj.loginid;
+}else{
+    //英文
+    location.href = 'html/getCode-en.html?loginid='+obj.loginid;
+}
+</script>

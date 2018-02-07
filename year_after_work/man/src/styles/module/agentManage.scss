@@ -1,0 +1,164 @@
+.AM-table {
+    margin-top: 30px;
+}
+
+.AM-cap {
+    font-size: 14px;
+    text-align: center;
+}
+
+.AM-edit {
+    cursor: pointer;
+    padding: 0 10px;
+}
+.AM-cog {
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.AM-check {
+    // cursor: pointer;
+    padding: 0 10px;
+    color: lightgreen;
+}
+
+.AM-ban {
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.AM-times, .AM-ellipsis {
+    // cursor: pointer;
+    padding: 0 10px;
+}
+
+
+.AM-search {
+    display: inline-block;
+    width: 60%;
+    margin-right: 10px;
+}
+
+.AM-searchBtn {
+    cursor: pointer;
+    font-size: 20px;
+    // border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.AM-topR {
+    // width: 40%;
+    // float: right;
+    display: inline-block;
+    text-align:center;
+    width: 35%;
+    margin-left: 130px;
+}
+
+.AM-topInfo {
+    width:100%;
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+}
+.per .record-info{
+    
+    width:10%;
+}
+.record-info{
+    width:7%;
+    margin-right:15px;
+}
+.record-month{
+    width:16%;
+}
+.record-year{
+    width:16%;
+}
+
+
+.AM-add {
+    // margin-left: 20px;
+    // margin-top: -2px;
+}
+
+.AM-agentID {
+    display: none;
+}
+.AM-top {
+    text-align: center;
+}
+
+.AM-tips1 {
+    position: absolute;
+    font-size: 16px;
+    left: 10%;
+    top: 13px;
+    color: lightgreen;
+}
+.AM-tips2 {
+    position: absolute;
+    font-size: 16px;
+    left: 470px;
+    top: 10px;
+    color: red;
+}
+.upTips1 {
+    color: lightgreen;
+    margin: 30px;
+}
+.upTips2 {
+    color: red;
+    margin: 30px;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border-top: 1px solid #ddd;
+}
+.btnAMsmall {
+    padding: 3px 6px;
+}
+.hideM {
+    display: none;
+}
+.pagenation {
+    margin: 0 auto;
+}
+.pageL {
+    display: inline;
+    li {
+        display: inline;
+    }
+}
+.pageL li>a{
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #428bca;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.AMnav {
+    text-align: center;
+    padding-right: 70px;
+    box-sizing: border-box;
+}
+.activePage2 {
+    background: #428bca!important;
+    color: #fff!important;
+}
+
+
+.show{
+    display:block;
+}
+.hide{
+    display:none;
+}
